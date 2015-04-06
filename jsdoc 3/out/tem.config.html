@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Namespace: config</title>
+    
+    <script src="http://shjs.sourceforge.net/sh_main.min.js"> </script>
+    <script src="http://shjs.sourceforge.net/lang/sh_javascript.min.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/node-dark.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+    
+    <h1 class="page-title">Namespace: config</h1>
+    
+    
+
+
+
+<section>
+    
+<header>
+    <h2>
+        <span class="ancestors"><a href="tem.html">tem</a>.</span>
+    
+    config
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description">This namespace contains fields and methods related to the configuration of an individual dashboard/wizard application. For example there are methods related to setting the logging level for an application as well as defining the set of sites that will be referenced across content and relevance functions.</div>
+        
+        
+        
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 149</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        <h3 class="subsection-title">Members</h3>
+        
+        <dl>
+            
+<dt>
+    <h4 class="name" id="DEBUG"><span class="type-signature">&lt;static, constant> </span>DEBUG<span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Constant representing debug logging level.
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 273</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="ERROR"><span class="type-signature">&lt;static, constant> </span>ERROR<span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Constant representing error logging level.
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 266</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="loggingLevelPreference"><span class="type-signature">&lt;static, constant> </span>loggingLevelPreference<span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Constant representing name of user's logging level preference.
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 280</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="sites"><span class="type-signature">&lt;static> </span>sites<span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        Defines the array of SiteIdentifier's associated with the dashboard.These SiteIdentifiers provide a way to define in a single array the groupof sites that a dashboard works with.  Various content related functions use tem.config.getSiteto access the SiteIdentifiers specified.  <p><b>The first site in the array is considered the "default".</b></p><pre>tem.config.sites = [new tem.model.SiteIdentifier('BES_SPRT','BES Support')];</pre>
+    </div>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 172</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+</dd>
+
+        </dl>
+    
+    
+    
+        <h3 class="subsection-title">Methods</h3>
+        
+        <dl>
+            
+<dt>
+    <h4 class="name" id="getSite"><span class="type-signature">&lt;static> </span>getSite</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Used to get site information from the sites defined in tem.config.sites.
+    </div>
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>siteKey</code></td>
+            
+            
+            <td class="type">
+            
+                        String
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">If specified, will use this key to determine what SiteIdentifier to return, if no key is specified it will return the default SiteIdentifier</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 246</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+		<span class="param-type">tem.model.SiteIdentifier</span> 
+		
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="isDebug"><span class="type-signature">&lt;static> </span>isDebug</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Used to determine whether the logging levelis set to DEBUG or lower.
+    </div>
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 303</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+		<span class="param-type">Boolean</span> 
+		
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="isError"><span class="type-signature">&lt;static> </span>isError</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Used to determine whether the logging levelis set to ERROR or lower.
+    </div>
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 314</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+		<span class="param-type">Boolean</span> 
+		
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
+        </dl>
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Namespaces</h3><ul><li><a href="$.fn.html">$.fn</a></li><li><a href="tem.html">tem</a></li><li><a href="tem.config.html">tem.config</a></li><li><a href="tem.consoleUtils.html">tem.consoleUtils</a></li><li><a href="tem.content.html">tem.content</a></li><li><a href="tem.context.html">tem.context</a></li><li><a href="tem.dataStore.html">tem.dataStore</a></li><li><a href="tem.file.html">tem.file</a></li><li><a href="tem.file.FileSystem.html">tem.file.FileSystem</a></li><li><a href="tem.file.scratchPad.html">tem.file.scratchPad</a></li><li><a href="tem.file.upload.html">tem.file.upload</a></li><li><a href="tem.javascriptUtils.html">tem.javascriptUtils</a></li><li><a href="tem.l10n.html">tem.l10n</a></li><li><a href="tem.library.html">tem.library</a></li><li><a href="tem.logging.html">tem.logging</a></li><li><a href="tem.model.html">tem.model</a></li><li><a href="tem.relevance.html">tem.relevance</a></li><li><a href="tem.relevance.queries.html">tem.relevance.queries</a></li><li><a href="tem.relevance.queries.computers.html">tem.relevance.queries.computers</a></li><li><a href="tem.shell.html">tem.shell</a></li><li><a href="temui.html">temui</a></li></ul><h3>Classes</h3><ul><li><a href="tem.library.JavaScriptLibrary.html">tem.library.JavaScriptLibrary</a></li><li><a href="tem.library.Library.html">tem.library.Library</a></li><li><a href="tem.model.ActionDescription.html">tem.model.ActionDescription</a></li><li><a href="tem.model.ActionParameter.html">tem.model.ActionParameter</a></li><li><a href="tem.model.ActionSecureParameter.html">tem.model.ActionSecureParameter</a></li><li><a href="tem.model.ActionSettings.html">tem.model.ActionSettings</a></li><li><a href="tem.model.ActionTargetAllComputers.html">tem.model.ActionTargetAllComputers</a></li><li><a href="tem.model.ActionTargetByComputerID.html">tem.model.ActionTargetByComputerID</a></li><li><a href="tem.model.ActionTargetByComputerName.html">tem.model.ActionTargetByComputerName</a></li><li><a href="tem.model.ActionTargetByCustomRelevance.html">tem.model.ActionTargetByCustomRelevance</a></li><li><a href="tem.model.Analysis.html">tem.model.Analysis</a></li><li><a href="tem.model.AnalysisProperty.html">tem.model.AnalysisProperty</a></li><li><a href="tem.model.BaseAction.html">tem.model.BaseAction</a></li><li><a href="tem.model.BaseActionSuccessCriteria.html">tem.model.BaseActionSuccessCriteria</a></li><li><a href="tem.model.BaseActionTarget.html">tem.model.BaseActionTarget</a></li><li><a href="tem.model.BaseComputerGroupSearch.html">tem.model.BaseComputerGroupSearch</a></li><li><a href="tem.model.BaseFixlet.html">tem.model.BaseFixlet</a></li><li><a href="tem.model.Baseline.html">tem.model.Baseline</a></li><li><a href="tem.model.BaselineComponent.html">tem.model.BaselineComponent</a></li><li><a href="tem.model.BaselineComponentCollection.html">tem.model.BaselineComponentCollection</a></li><li><a href="tem.model.BaselineComponentGroup.html">tem.model.BaselineComponentGroup</a></li><li><a href="tem.model.ComputerGroup.html">tem.model.ComputerGroup</a></li><li><a href="tem.model.CustomRelevance.html">tem.model.CustomRelevance</a></li><li><a href="tem.model.DefaultAction.html">tem.model.DefaultAction</a></li><li><a href="tem.model.Fixlet.html">tem.model.Fixlet</a></li><li><a href="tem.model.FixletAction.html">tem.model.FixletAction</a></li><li><a href="tem.model.FixletWithActions.html">tem.model.FixletWithActions</a></li><li><a href="tem.model.MemberAction.html">tem.model.MemberAction</a></li><li><a href="tem.model.MIMEField.html">tem.model.MIMEField</a></li><li><a href="tem.model.MultipleActionGroup.html">tem.model.MultipleActionGroup</a></li><li><a href="tem.model.MultipleItems.html">tem.model.MultipleItems</a></li><li><a href="tem.model.OriginalRelevance.html">tem.model.OriginalRelevance</a></li><li><a href="tem.model.RunToCompletion.html">tem.model.RunToCompletion</a></li><li><a href="tem.model.SearchComponentGroupReference.html">tem.model.SearchComponentGroupReference</a></li><li><a href="tem.model.SearchComponentPropertyReference.html">tem.model.SearchComponentPropertyReference</a></li><li><a href="tem.model.SearchComponentRelevance.html">tem.model.SearchComponentRelevance</a></li><li><a href="tem.model.SingleAction.html">tem.model.SingleAction</a></li><li><a href="tem.model.SiteIdentifier.html">tem.model.SiteIdentifier</a></li><li><a href="tem.model.Task.html">tem.model.Task</a></li><li><a href="tem.model.WizardSource.html">tem.model.WizardSource</a></li><li><a href="tem.model.XMLSerializableObject.html">tem.model.XMLSerializableObject</a></li><li><a href="tem.model.XMLWrapper.html">tem.model.XMLWrapper</a></li><li><a href="tem.relevance.RelevanceData.html">tem.relevance.RelevanceData</a></li><li><a href="tem.shell.ShellWrapper.html">tem.shell.ShellWrapper</a></li><li><a href="tem.shell.SimpleExec.html">tem.shell.SimpleExec</a></li><li><a href="temui.analysisWarning.html">temui.analysisWarning</a></li><li><a href="temui.chartContainer.html">temui.chartContainer</a></li><li><a href="temui.dataGrid.html">temui.dataGrid</a></li><li><a href="temui.filterInput.html">temui.filterInput</a></li><li><a href="temui.gridContainer.html">temui.gridContainer</a></li><li><a href="temui.message.html">temui.message</a></li><li><a href="temui.popupMessage.html">temui.popupMessage</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3</a> on Mon Mar 18 2013 23:01:13 GMT+0800 (SGT)
+</footer>
+
+<script> sh_highlightDocument(); </script>
+</body>
+</html>

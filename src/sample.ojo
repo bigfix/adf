@@ -1,0 +1,229 @@
+<?xml version="1.0"?>
+<BES>
+	<Wizard>
+		<Title>ADF 2.3.0 - Sample Dashboard</Title>
+		<UIHooks LaunchType="Document" RequiresAuthoring="false" Menu="Dashboards"></UIHooks>
+		<DefaultPage>Page1</DefaultPage>
+		<Page Name="Page1" DocType="HTML5">
+			<Title>Page1 Title</Title>
+			<!-- 
+		      <Head><![CDATA[<meta http-equiv="X-UA-Compatible" content="IE=9">]]></Head>
+		    -->
+			<HTML>
+		<![CDATA[
+
+		<script>
+			// This is a fix for IE8 running in EmulateIE8 mode. 
+	        // var baseTag = document.getElementsByTagName('base')[0];
+	        // baseTag.href = "\\\\" + baseTag.getAttribute('href');
+		</script>
+
+		<!-- <script src="libs/firebug/firebug-lite.js">{startOpened: true}</script> -->
+		
+		<!--[if lt IE 9]><script src="excanvas.js"></script><![endif]-->
+        <script src="require.js"></script>
+        <script>
+            require(['./common'], function (common) {
+				require(['../sample']);
+            });
+        </script>
+
+        <div id="pageContent" style="display:none">
+
+			<div data-tem-role="topNav">
+				<button data-tem-role="refreshButton"></button>
+				<button data-tem-role="printButton"></button>
+				<button style="width:auto;padding-left:10px; padding-right:10px;"><span>Other Action</span></button>
+			</div>
+
+					
+			<div data-tem-role="header">
+				<?hxlat ADF 2.3.0 - Sample Dashboard?>
+				<div id="lastUpdate" data-tem-role="lastUpdate"></div>	
+			</div>
+
+			<div id="information">
+				<p data-tem-role="messageText">
+					Message and AnalysisWarning components can be used to display application-level information of various types.
+				</p>
+			</div>
+	    
+	    <div id="warningDialog" title="<?hxlat Warning Message?>">
+	      <div data-tem-role="messageText"><?hxlat The client cannot connect to the server, please check the server's status?></div>
+	      <div data-tem-role="description">
+	        <p>The server might not be available because someone pulled out the plug.</p>
+	        <p>Plug in and restart the server.</p>
+	        <p>If the problem persists, install a locked door to keep the people away from the server, then restart it.</p>
+	      </div>
+	    </div>
+
+	    <div class="temui-print-only">
+	    	This text is available in printable page only. Use CSS to modify the page content and format for printing.
+	    </div>
+
+			<div id="tabs">
+				<ul class="tab-titles">
+					<li><a href="#tabs-1"><?hxlat Content Creation/Interaction?></a></li>
+					<li><a id="tab2" href="#tabs-2"><?hxlat Console/Context Information?></a></li>
+					<li><a id="chartTab" href="#tabs-chart"><?hxlat Charts?></a></li>
+					<li><a id="dataGridTab" href="#tabs-grid"><?hxlat DataGrid?></a></li>
+					<li><a id="formTab" href="#tabs-form"><?hxlat Form Validation?></a></li>
+					<li><a id="tab3" href="#tabs-3"><?hxlat Misc. Widget Examples?></a></li>
+				</ul>
+
+				<div id="tabs-1">
+					<button id="createAction"><?hxlat Create Action?></button>
+					<br/>
+					<br/>
+					<button id="createActionNoUI"><?hxlat Create Action, Skip UI?></button>
+					<br/> 
+					<br/>
+					<button id="createActionNoDoc"><?hxlat Create Action, Don't open document window.?></button>
+					<br/>
+					<br/>
+					<button id="openComputerGroup"><?hxlat Open Computers?></button>
+					<br/>
+					<br/>
+					<button id="createAnalysis" onclick="createAnalysis()"><?hxlat Create Analysis?></button>
+				</div>
+			
+				<div id="tabs-2">
+					<p><?hxlat Context Information:?> 
+						<ul id="contextInfo"></ul>
+					</p>
+		
+					<p><?hxlat Localization example:?> 
+						<ul id="localizationExample"></ul>
+					</p>
+
+				</div>
+				<div id="tabs-3">
+					<div class="ui-widget-content ui-corner-all" style="padding:2px;">		
+						<div id="expandablePanel" class="ui-widget-header ui-corner-all" style="padding:5px; margin-bottom:3px;cursor:pointer;">
+							<span class="ui-icon ui-icon-triangle-1-s" style="float:left; display:none;"></span>
+							<span class="ui-icon ui-icon-triangle-1-n" style="float:left"></span>
+							<span><?hxlat Collapsible Panel?></span>
+						</div>
+				
+						<div id="expandableContent" style="padding:10px;">	
+							<div style="height:200px;">&nbsp;</div>
+						</div>
+					</div>
+	        
+	                <p><a href="javascript:" onclick="showInformationMessage()"><?hxlat Show Information Message ?></a></p>
+	                <p><a href="javascript:" onclick="showInformationPopup()"><?hxlat Show Information Popup ?></a></p>
+	                <p><a href="javascript:" onclick="showWarningPopup()"><?hxlat Show Warning Popup ?></a></p>
+	                
+	                <p><a href="javascript:" onclick="temui.showLogDialog()"><?hxlat Log Settings Dialog ?></a></p>
+	                <p><a href="javascript:" onclick="tem.evalRel('namesa of bes fixlets')"><?hxlat Error Popup?></a></p> 
+					<p>For more available widgets (i.e. DatePicker and Slider), refer to the <a href="http://jqueryui.com/demos/" target="_new">jQuery UI documentation</a> for jQuery UI 1.8.17</p>
+				</div>
+				<div id="tabs-grid">
+			
+					<div id="dataGridContainer" style="padding:0px; margin-top:5px;" class="">
+						<h3 data-tem-role="header"><?hxlat Fixlets?></h3>
+						<div data-tem-role="toolbar">
+							<div data-tem-role="buttonContainer">
+								<button><?hxlat Regular Button?></button>
+								<button
+									data-tem-role="bulkButton"><?hxlat Bulk Button?></button>
+								<button id="menuButton" 
+									data-tem-role="bulkButton">
+									<span style="vertical-align: middle;"><?hxlat Actions?></span>
+									<span class="ui-icon ui-icon-triangle-1-s" style="display:inline-block; vertical-align: middle;"></span>
+								</button>
+								<button data-tem-role="exportButton" data-tem-columns="exportColumns"></button>
+							</div>
+							<div data-tem-role="filterContainer">
+								<input data-tem-role="filter" type="text"/>
+							</div>
+							<br clear="all" />
+						</div>
+						<div id="sampleGrid" style="height:500px; width:100%"></div>
+						<div id="pager"></div>
+					</div>
+				</div>
+
+
+	            <div id="tabs-chart">
+	                <div>
+	                    <div>
+	                        <div id="barChartContainer" class="chartContainer">
+	                            <h3 data-tem-role="header"><?hxlat Bar Chart Example?></h3>
+	                            <div id="barChart" style="height:350px; width:100%;"></div>
+	                        </div>
+	                    </div>  
+	                </div>
+	                
+	                <div class="yui3-g">
+	                    <div class="yui3-u-1-2">
+	                        <div id="columnChartContainer1" class="chartContainer" style="margin-right:10px;">
+	                            <h3 data-tem-role="header"><?hxlat Column Chart Example #1?></h3>
+	                            <div id="columnChart1" class="columnChart"></div>
+	                        </div>
+	                    </div>
+	                    
+	                    <div class="yui3-u-1-2">
+	                        <div id="columnChartContainer2" class="chartContainer">
+	                            <div data-tem-role="header">
+	                                <span><?hxlat Column Chart Example #2?></span>
+	                            </div>
+	                            <div id="columnChart2" class="columnChart"></div>
+	                        </div>
+	                    </div>
+	                </div>
+
+	                <div class="yui3-u">
+	                    <div id="pieChartContainer" class="chartContainer">
+	                        <h3 data-tem-role="header"><?hxlat % Patched/Unpatched Patches?></h3>
+	                        <div id="pieChart" style="height:275px; width:300px;"></div>        
+	                    </div>
+	                </div>
+	            </div>
+	    
+	    
+				<div id="tabs-form">
+			        <form id="validationForm" method="get" action="javascript:alert('Form submitted')">
+			          <fieldset>
+			            <legend>Sample Form</legend>
+			            <div id='formContent'>
+			              <div class="form-input-row">
+			                <div class="name">Name (min length: 2):</div>
+			                <div class="input"><input type="text" id="input-name" name="name" required minlength="2"/></div>
+			              </div>
+			              <div class="form-input-row">
+			                <div class="name">Fixet ID:</div>
+			                <div class="input"><input type="text" id="input-fixlet" 
+			                                          name="fixletID" 
+			                                          class="required digits"
+			                                          data-tem-validate-relevance='exists fixlet {value} of bes site whose (name of it = "BES Support")'
+			                                          data-tem-validate-error='<?jxlat Enter a valid BES Support fixlet ID?>' /></div>
+			              </div>
+			              <div class="form-input-row">
+			                <div class="name">Year of birth:</div>
+			                <div class="input"><input type="text" id="input-year" 
+			                                          name="year" 
+			                                          class="required digits"
+			                                          data-tem-validate-function='function(value){ return (value < (new Date()).getFullYear()); }'  /></div>
+			              </div>
+			              <input type="submit" value="Submit" id="validationSubmit" />
+			           </div>
+			        </fieldset>
+			        </form>
+
+			        <br/><br/>
+
+	                <a href='javascript:' onclick='showValidationErrors()'>Validate Form</a>
+	                &nbsp;&nbsp;&nbsp;
+	                <a href='javascript:' onclick='resetForm()'>Hide Errors</a>
+			    </div>
+	      
+			</div>
+			
+		</div>
+
+		]]>
+		</HTML>
+		</Page>
+	</Wizard>
+</BES>

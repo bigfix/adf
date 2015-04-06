@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: ActionSettings</title>
+    
+    <script src="http://shjs.sourceforge.net/sh_main.min.js"> </script>
+    <script src="http://shjs.sourceforge.net/lang/sh_javascript.min.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/node-dark.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+    
+    <h1 class="page-title">Class: ActionSettings</h1>
+    
+    
+
+
+
+<section>
+    
+<header>
+    <h2>
+        <span class="ancestors"><a href="tem.html">tem</a><a href="tem.model.html">tem.model</a>.</span>
+    
+    ActionSettings
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+<dt>
+    <h4 class="name" id="ActionSettings"><span class="type-signature"></span>new ActionSettings</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+        <h5 class="subsection-title">Properties:</h5>
+        
+        <dl>
+
+<table class="props">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>HasMessage</code></td>
+            
+            
+            <td class="type">
+            
+                        Boolean
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>MessageXML</code></td>
+            
+            
+            <td class="type">
+            
+                        <a href="tem.model.XMLWrapper.html">tem.model.XMLWrapper</a>
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">(taken from schema)<pre>&lt;xs:complexType&gt; &lt;xs:sequence&gt;   &lt;xs:group minOccurs="0" ref="Message"/&gt;   &lt;xs:element minOccurs="0" name="ShowActionButton" type="xs:boolean"/&gt;   &lt;xs:element minOccurs="0" name="ShowCancelButton" type="xs:boolean"/&gt;   &lt;xs:element minOccurs="0" name="AllowPostponement" type="xs:boolean"/&gt;   &lt;xs:element minOccurs="0" name="MaxPostponementInterval" type="ActionMessageMaxPostponementInterval"/&gt;   &lt;xs:element minOccurs="0" name="PostponementDeadlineOffset" type="TimeInterval"/&gt;   &lt;xs:element minOccurs="0" name="HasTimeout" type="xs:boolean"/&gt;   &lt;xs:element minOccurs="0" name="TimeoutInterval" type="ActionMessageTimeInterval"/&gt; &lt;/xs:sequence&gt;&lt;/xs:complexType&gt;</pre></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>ActionUITitle</code></td>
+            
+            
+            <td class="type">
+            
+                        String
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>PreActionShowUI</code></td>
+            
+            
+            <td class="type">
+            
+                        Boolean
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>PreActionXML</code></td>
+            
+            
+            <td class="type">
+            
+                        <a href="tem.model.XMLWrapper.html">tem.model.XMLWrapper</a>
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">(from schema)<pre>	&lt;xs:element name="PreAction" minOccurs="0"&gt;		&lt;xs:complexType&gt;			&lt;xs:sequence&gt;			&lt;xs:element	name="Text"	type="xs:string" minOccurs="0" /&gt;			&lt;xs:element	name="AskToSaveWork" type="xs:boolean" minOccurs="0" /&gt;			&lt;xs:element	name="ShowActionButton"	type="xs:boolean" minOccurs="0" /&gt;			&lt;xs:element	name="ShowCancelButton"	type="xs:boolean" minOccurs="0" /&gt;			&lt;xs:element	name="DeadlineBehavior"	type="ActionDeadlineBehavior" minOccurs="0" /&gt;			&lt;xs:element	name="DeadlineType"	minOccurs="0"&gt;				&lt;xs:simpleType&gt;				&lt;xs:restriction	base="xs:string"&gt;					&lt;xs:enumeration value="Interval" /&gt;					&lt;xs:enumeration value="Absolute" /&gt;				&lt;/xs:restriction&gt;				&lt;/xs:simpleType&gt;			&lt;/xs:element&gt;			&lt;xs:element	name="DeadlineInterval"	type="ActionMessageTimeInterval" minOccurs="0" /&gt;			&lt;xs:choice&gt;				&lt;xs:element	name="DeadlineOffset" type="TimeInterval" minOccurs="0" /&gt;				&lt;xs:element	name="DeadlineLocalOffset" type="TimeInterval" minOccurs="0" /&gt;			&lt;/xs:choice&gt;			&lt;xs:element	name="ShowConfirmation"	type="xs:boolean" minOccurs="0" /&gt;			&lt;xs:element	name="Confirmation"	type="xs:string" minOccurs="0" /&gt;			&lt;/xs:sequence&gt;		&lt;/xs:complexType&gt;	&lt;/xs:element&gt;</pre></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>HasRunningMessage</code></td>
+            
+            
+            <td class="type">
+            
+                        Boolean
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>RunningMessageXML</code></td>
+            
+            
+            <td class="type">
+            
+                        <a href="tem.model.XMLWrapper.html">tem.model.XMLWrapper</a>
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"><pre>	&lt;xs:element name="RunningMessage"	minOccurs="0"&gt;		&lt;xs:complexType&gt;			&lt;xs:sequence&gt;				&lt;xs:element	name="Title" type="xs:string" minOccurs="0" /&gt;				&lt;xs:element	name="Text"	type="xs:string" minOccurs="0" /&gt;			&lt;/xs:sequence&gt;		&lt;/xs:complexType&gt;	&lt;/xs:element&gt;</pre></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>HasTimeRange</code></td>
+            
+            
+            <td class="type">
+            
+                        Boolean
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>TimeRangeXML</code></td>
+            
+            
+            <td class="type">
+            
+                        <a href="tem.model.XMLWrapper.html">tem.model.XMLWrapper</a>
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">(from schema)<pre>
+		&lt;xs:element name="TimeRange" minOccurs="0"&gt;
+			&lt;xs:complexType&gt;
+				&lt;xs:sequence&gt;
+					&lt;xs:element	name="StartTime" type="xs:time" minOccurs="0" /&gt;
+					&lt;xs:element	name="EndTime" type="xs:time" minOccurs="0"	/&gt;
+				&lt;/xs:sequence&gt;
+			&lt;/xs:complexType&gt;
+		&lt;/xs:element></pre></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>HasStartTime</code></td>
+            
+            
+            <td class="type">
+            
+                        Boolean
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>StartDateTimeOffset</code></td>
+            
+            
+            <td class="type">
+            
+                        String
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Use StartDateTimeOffset to specify the start time using GMT as the reference time.Instead of setting StartDateTimeOffset as of <b> TEM 8.1 patch #2+</b> you can specify the <span class="fixedFont light">{String}</span> <span class="fixedFont">StartDateTimeLocalOffset</span> property to specify the start time using local time as the reference time.<p>For example, suppose it's January 1, 12:00 local time and your time zone is GMT-8.		<br>&nbsp;&nbsp;"StartDateTimeOffset = 1 day, 2 hours" sets the start time to Janary 2, 22:00.		<br>&nbsp;&nbsp;"StartDateTimeLocalOffset = 1 day, 2 hours" sets the start time to January 2, 14:00.</p><p>These values need to be set according to the following RegExp specified inthe XML schema:</p><p>P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+(\.[0-9]{1,6})?S)?)?</p><p>A sample value would be "P1DT23H59M48S"</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>StartDateTimeLocalOffset</code></td>
+            
+            
+            <td class="type">
+            
+                        String
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">(See notes for StartDateTimeOffset)</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>HasEndTime</code></td>
+            
+            
+            <td class="type">
+            
+                        Boolean
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>EndDateTimeOffset</code></td>
+            
+            
+            <td class="type">
+            
+                        String
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Use EndDateTimeOffset to specify the end time using GMT as the reference time.Instead of setting EndDateTimeOffset as of <b> TEM 8.1 patch #2+</b> you can specify the <span class="fixedFont light">{String}</span> <span class="fixedFont">EndDateTimeLocalOffset</span> property to specify the end time using local time as the reference time.<p>For example, suppose it's January 1, 12:00 local time and your time zone is GMT-8.		<br>&nbsp;&nbsp;"EndDateTimeOffset = 1 day, 2 hours" sets the end time to Janary 2, 22:00.		<br>&nbsp;&nbsp;"EndDateTimeLocalOffset = 1 day, 2 hours" sets the end time to January 2, 14:00.</p><p>These values need to be set according to the following RegExp specified inthe XML schema:</p><p>P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+(\.[0-9]{1,6})?S)?)?</p><p>A sample value would be "P1DT23H59M48S"</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>EndDateTimeLocalOffset</code></td>
+            
+            
+            <td class="type">
+            
+                        String
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">(See notes for EndDateTimeOffset)</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>HasDayOfWeekConstraint</code></td>
+            
+            
+            <td class="type">
+            
+                        Boolean
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>DayOfWeekConstraintXML</code></td>
+            
+            
+            <td class="type">
+            
+                        <a href="tem.model.XMLWrapper.html">tem.model.XMLWrapper</a>
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">(taken from schema)<pre>	&lt;xs:element name="DayOfWeekConstraint" minOccurs="0"&gt;		&lt;xs:complexType&gt;			&lt;xs:sequence&gt;				&lt;xs:element	name="Sun" type="xs:boolean" minOccurs="0" /&gt;				&lt;xs:element	name="Mon" type="xs:boolean" minOccurs="0" /&gt;				&lt;xs:element	name="Tue" type="xs:boolean" minOccurs="0" /&gt;				&lt;xs:element	name="Wed" type="xs:boolean" minOccurs="0" /&gt;				&lt;xs:element	name="Thu" type="xs:boolean" minOccurs="0" /&gt;				&lt;xs:element	name="Fri" type="xs:boolean" minOccurs="0" /&gt;				&lt;xs:element	name="Sat" type="xs:boolean" minOccurs="0" /&gt;			&lt;/xs:sequence&gt;		&lt;/xs:complexType&gt;	&lt;/xs:element&gt;</pre></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>ActiveUserRequirement</code></td>
+            
+            
+            <td class="type">
+            
+                        String
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Must be "NoRequirement",  "RequireUser" or  "RequireNoUser"</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>ActiveUserType</code></td>
+            
+            
+            <td class="type">
+            
+                        String
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Must be "AllUsers",  "LocalUsers" or  "UsersOfGroups"</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>UIGroupConstraintsXML</code></td>
+            
+            
+            <td class="type">
+            
+                        <a href="tem.model.XMLWrapper.html">tem.model.XMLWrapper</a>
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">(taken from schema)<pre>	&lt;xs:element name="UIGroupConstraints" minOccurs="0"&gt;		&lt;xs:complexType&gt;			&lt;xs:choice maxOccurs="unbounded"&gt;				&lt;xs:element	name="Win9xGroup" minOccurs="0" /&gt;				&lt;xs:element	name="WinNTGroup" minOccurs="0" /&gt;				&lt;xs:element	name="LocalGroup" minOccurs="0"	maxOccurs="unbounded"&gt;					&lt;xs:complexType&gt;						&lt;xs:attribute name="Name" type="xs:string" use="required" /&gt;					&lt;/xs:complexType&gt;				&lt;/xs:element&gt;				&lt;xs:element	name="DomainGroup" minOccurs="0" maxOccurs="unbounded"&gt;					&lt;xs:complexType&gt;						&lt;xs:attribute name="Name" type="xs:string" use="required" /&gt;						&lt;xs:attribute name="Sid" type="xs:string" use="required" /&gt;					&lt;/xs:complexType&gt;				&lt;/xs:element&gt;			&lt;/xs:choice&gt;		&lt;/xs:complexType&gt;	&lt;/xs:element&gt;</pre></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>HasWhose</code></td>
+            
+            
+            <td class="type">
+            
+                        Boolean
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>WhoseXML</code></td>
+            
+            
+            <td class="type">
+            
+                        <a href="tem.model.XMLWrapper.html">tem.model.XMLWrapper</a>
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">(from schema)<pre>	&lt;xs:element name="Whose" minOccurs="0"&gt;		&lt;xs:complexType&gt;			&lt;xs:sequence&gt;				&lt;xs:element	name="Property" type="xs:string" minOccurs="0" /&gt;				&lt;xs:element	name="Relation" minOccurs="0"&gt;					&lt;xs:simpleType&gt;						&lt;xs:restriction	base="xs:string" /&gt;					&lt;/xs:simpleType&gt;				&lt;/xs:element&gt;				&lt;xs:element	name="Value" type="xs:string" minOccurs="0" /&gt;			&lt;/xs:sequence&gt;		&lt;/xs:complexType&gt;	&lt;/xs:element&gt;</pre></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>Reapply</code></td>
+            
+            
+            <td class="type">
+            
+                        Boolean
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>HasReapplyLimit</code></td>
+            
+            
+            <td class="type">
+            
+                        Boolean
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>ReapplyLimit</code></td>
+            
+            
+            <td class="type">
+            
+                        Number
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>HasReapplyInterval</code></td>
+            
+            
+            <td class="type">
+            
+                        Boolean
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>ReapplyInterval</code></td>
+            
+            
+            <td class="type">
+            
+                        String
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Must have one of the following values:"PT15M","PT30M","PT1H","PT2H","PT4H","PT6H","PT8H","PT12H","P1D","P2D","P3D","P5D","P7D","P15D","P30D"</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>HasRetry</code></td>
+            
+            
+            <td class="type">
+            
+                        Boolean
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>RetryCount</code></td>
+            
+            
+            <td class="type">
+            
+                        Number
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>RetryWaitXML</code></td>
+            
+            
+            <td class="type">
+            
+                        <a href="tem.model.XMLWrapper.html">tem.model.XMLWrapper</a>
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">(from schema)<pre>	&lt;xs:element name="RetryWait" minOccurs="0"&gt;		&lt;xs:complexType&gt;			&lt;xs:simpleContent&gt;			&lt;xs:extension base="RetryWaitInterval"&gt;				&lt;xs:attribute name="Behavior"	default="WaitForInterval"&gt;				&lt;xs:simpleType&gt;					&lt;xs:restriction base="xs:string"&gt;					&lt;xs:enumeration	value="WaitForReboot" /&gt;					&lt;xs:enumeration	value="WaitForInterval" /&gt;					&lt;/xs:restriction&gt;				&lt;/xs:simpleType&gt;				&lt;/xs:attribute&gt;			&lt;/xs:extension&gt;			&lt;/xs:simpleContent&gt;		&lt;/xs:complexType&gt;	&lt;/xs:element&gt;</pre></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>HasTemporalDistribution</code></td>
+            
+            
+            <td class="type">
+            
+                        Boolean
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>TemporalDistribution</code></td>
+            
+            
+            <td class="type">
+            
+                        String
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">This value needs to be set according to the following RegExp specified inthe XML schema:<p>P([0-9]+D)?(T([0-9]+H)?([0-9]+M)?([0-9]+(\.[0-9]{1,6})?S)?)?</p><p>A sample value would be "P1DT23H59M48S"</p></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>ContinueOnErrors</code></td>
+            
+            
+            <td class="type">
+            
+                        Boolean
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>PostActionBehaviorXML</code></td>
+            
+            
+            <td class="type">
+            
+                        <a href="tem.model.XMLWrapper.html">tem.model.XMLWrapper</a>
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">(from schema)<pre>	&lt;xs:element name="PostActionBehavior"	minOccurs="0"&gt;		&lt;xs:complexType&gt;			&lt;xs:sequence&gt;				&lt;xs:element	name="Behavior"	type="xs:boolean" minOccurs="0" /&gt;				&lt;xs:element	name="AllowCancel" type="xs:boolean" minOccurs="0" /&gt;				&lt;xs:element	name="Postponement"	type="xs:boolean" minOccurs="0" /&gt;				&lt;xs:element	name="Timeout" type="xs:boolean" minOccurs="0" /&gt;				&lt;xs:element	name="Deadline"	type="xs:boolean" minOccurs="0" /&gt;				&lt;!-- Postponement and Timeout were BES pre-7.0 options that	were replaced with Deadline	--&gt;				&lt;xs:group ref="MessageLocks" minOccurs="0" /&gt;			&lt;/xs:sequence&gt;		&lt;/xs:complexType&gt;	&lt;/xs:element&gt;</pre></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>IsOffer</code></td>
+            
+            
+            <td class="type">
+            
+                        Boolean
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>OfferCategory</code></td>
+            
+            
+            <td class="type">
+            
+                        String
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>OfferDescriptionHTML</code></td>
+            
+            
+            <td class="type">
+            
+                        String
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	</tbody>
+</table></dl>
+        
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 3902</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+    
+    </div>
+    
+    
+        <h3 class="subsection-title">Extends</h3>
+        
+        <ul>
+            <li><a href="tem.model.XMLSerializableObject.html">tem.model.XMLSerializableObject</a></li>
+        </ul>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        <h3 class="subsection-title">Methods</h3>
+        
+        <dl>
+            
+<dt>
+    <h4 class="name" id="fromXML"><span class="type-signature"></span>fromXML</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <p>This method deserializes an XML string and populates the model object's properties basedon the contents of the XML, recursively creating "sub-model objects" where needed.</p><p>For example:</p><pre>var testFixlet = new tem.model.Fixlet();testFixlet.Title = "Test Fixlet";...var testAction = new tem.model.FixletAction("action1");testAction.ActionScript = "// do nothing";testFixlet.addAction(testAction);var fixletId = tem.content.createContent(testFixlet, true, false);var fixletXML = tem.evalRel('(fixlet whose (id of it = ' + fixletId +') of bes sites whose (name of it = "ActionSite")) as xml');	var builtFixlet = new tem.model.Fixlet();builtFixlet.fromXML(fixletXML);</pre><p>would result in the builtFixlet model object having all of its properties set based on the retrieved XML, includinghaving its Action property populated with a tem.model.FixletAction object.</p>
+    </div>
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>nodeXML</code></td>
+            
+            
+            <td class="type">
+            
+                        String
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">String representation of an XML object.</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 3074</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="toXML"><span class="type-signature"></span>toXML</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        This method creates an XML "snapshot" of the current state of the content model object.Typically this XML would be used as part of the content creation process as the consolehooks use an XML representation of a content object to create content.
+    </div>
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>skipUI</code></td>
+            
+            
+            <td class="type">
+            
+                        Boolean
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">If set to true the console window asking for user confirmation oncontent creation will be suppressed.</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 2930</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+		<span class="param-type">DOMDocument</span> 
+		
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
+        </dl>
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Namespaces</h3><ul><li><a href="$.fn.html">$.fn</a></li><li><a href="tem.html">tem</a></li><li><a href="tem.config.html">tem.config</a></li><li><a href="tem.consoleUtils.html">tem.consoleUtils</a></li><li><a href="tem.content.html">tem.content</a></li><li><a href="tem.context.html">tem.context</a></li><li><a href="tem.dataStore.html">tem.dataStore</a></li><li><a href="tem.file.html">tem.file</a></li><li><a href="tem.file.FileSystem.html">tem.file.FileSystem</a></li><li><a href="tem.file.scratchPad.html">tem.file.scratchPad</a></li><li><a href="tem.file.upload.html">tem.file.upload</a></li><li><a href="tem.javascriptUtils.html">tem.javascriptUtils</a></li><li><a href="tem.l10n.html">tem.l10n</a></li><li><a href="tem.library.html">tem.library</a></li><li><a href="tem.logging.html">tem.logging</a></li><li><a href="tem.model.html">tem.model</a></li><li><a href="tem.relevance.html">tem.relevance</a></li><li><a href="tem.relevance.queries.html">tem.relevance.queries</a></li><li><a href="tem.relevance.queries.computers.html">tem.relevance.queries.computers</a></li><li><a href="tem.shell.html">tem.shell</a></li><li><a href="temui.html">temui</a></li></ul><h3>Classes</h3><ul><li><a href="tem.library.JavaScriptLibrary.html">tem.library.JavaScriptLibrary</a></li><li><a href="tem.library.Library.html">tem.library.Library</a></li><li><a href="tem.model.ActionDescription.html">tem.model.ActionDescription</a></li><li><a href="tem.model.ActionParameter.html">tem.model.ActionParameter</a></li><li><a href="tem.model.ActionSecureParameter.html">tem.model.ActionSecureParameter</a></li><li><a href="tem.model.ActionSettings.html">tem.model.ActionSettings</a></li><li><a href="tem.model.ActionTargetAllComputers.html">tem.model.ActionTargetAllComputers</a></li><li><a href="tem.model.ActionTargetByComputerID.html">tem.model.ActionTargetByComputerID</a></li><li><a href="tem.model.ActionTargetByComputerName.html">tem.model.ActionTargetByComputerName</a></li><li><a href="tem.model.ActionTargetByCustomRelevance.html">tem.model.ActionTargetByCustomRelevance</a></li><li><a href="tem.model.Analysis.html">tem.model.Analysis</a></li><li><a href="tem.model.AnalysisProperty.html">tem.model.AnalysisProperty</a></li><li><a href="tem.model.BaseAction.html">tem.model.BaseAction</a></li><li><a href="tem.model.BaseActionSuccessCriteria.html">tem.model.BaseActionSuccessCriteria</a></li><li><a href="tem.model.BaseActionTarget.html">tem.model.BaseActionTarget</a></li><li><a href="tem.model.BaseComputerGroupSearch.html">tem.model.BaseComputerGroupSearch</a></li><li><a href="tem.model.BaseFixlet.html">tem.model.BaseFixlet</a></li><li><a href="tem.model.Baseline.html">tem.model.Baseline</a></li><li><a href="tem.model.BaselineComponent.html">tem.model.BaselineComponent</a></li><li><a href="tem.model.BaselineComponentCollection.html">tem.model.BaselineComponentCollection</a></li><li><a href="tem.model.BaselineComponentGroup.html">tem.model.BaselineComponentGroup</a></li><li><a href="tem.model.ComputerGroup.html">tem.model.ComputerGroup</a></li><li><a href="tem.model.CustomRelevance.html">tem.model.CustomRelevance</a></li><li><a href="tem.model.DefaultAction.html">tem.model.DefaultAction</a></li><li><a href="tem.model.Fixlet.html">tem.model.Fixlet</a></li><li><a href="tem.model.FixletAction.html">tem.model.FixletAction</a></li><li><a href="tem.model.FixletWithActions.html">tem.model.FixletWithActions</a></li><li><a href="tem.model.MemberAction.html">tem.model.MemberAction</a></li><li><a href="tem.model.MIMEField.html">tem.model.MIMEField</a></li><li><a href="tem.model.MultipleActionGroup.html">tem.model.MultipleActionGroup</a></li><li><a href="tem.model.MultipleItems.html">tem.model.MultipleItems</a></li><li><a href="tem.model.OriginalRelevance.html">tem.model.OriginalRelevance</a></li><li><a href="tem.model.RunToCompletion.html">tem.model.RunToCompletion</a></li><li><a href="tem.model.SearchComponentGroupReference.html">tem.model.SearchComponentGroupReference</a></li><li><a href="tem.model.SearchComponentPropertyReference.html">tem.model.SearchComponentPropertyReference</a></li><li><a href="tem.model.SearchComponentRelevance.html">tem.model.SearchComponentRelevance</a></li><li><a href="tem.model.SingleAction.html">tem.model.SingleAction</a></li><li><a href="tem.model.SiteIdentifier.html">tem.model.SiteIdentifier</a></li><li><a href="tem.model.Task.html">tem.model.Task</a></li><li><a href="tem.model.WizardSource.html">tem.model.WizardSource</a></li><li><a href="tem.model.XMLSerializableObject.html">tem.model.XMLSerializableObject</a></li><li><a href="tem.model.XMLWrapper.html">tem.model.XMLWrapper</a></li><li><a href="tem.relevance.RelevanceData.html">tem.relevance.RelevanceData</a></li><li><a href="tem.shell.ShellWrapper.html">tem.shell.ShellWrapper</a></li><li><a href="tem.shell.SimpleExec.html">tem.shell.SimpleExec</a></li><li><a href="temui.analysisWarning.html">temui.analysisWarning</a></li><li><a href="temui.chartContainer.html">temui.chartContainer</a></li><li><a href="temui.dataGrid.html">temui.dataGrid</a></li><li><a href="temui.filterInput.html">temui.filterInput</a></li><li><a href="temui.gridContainer.html">temui.gridContainer</a></li><li><a href="temui.message.html">temui.message</a></li><li><a href="temui.popupMessage.html">temui.popupMessage</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3</a> on Mon Mar 18 2013 23:01:14 GMT+0800 (SGT)
+</footer>
+
+<script> sh_highlightDocument(); </script>
+</body>
+</html>

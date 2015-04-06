@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<BES>
+	<Wizard>
+		<Title>ADF 2.3.0 - Template</Title>
+		<UIHooks LaunchType="Document" RequiresAuthoring="false" Menu="Dashboards"></UIHooks>
+		<DefaultPage>Page1</DefaultPage>
+		<Page Name="Page1" DocType="HTML5">
+			<Title>Page1 Title</Title>
+			<!-- 
+		      <Head><![CDATA[<meta http-equiv="X-UA-Compatible" content="IE=9">]]></Head>
+		    -->
+			<HTML>
+		<![CDATA[
+
+		<!-- <script src="libs/firebug/firebug-lite.js">{startOpened: true}</script> -->
+		
+		<!--[if lt IE 9]><script src="excanvas.js"></script><![endif]-->
+        <script src="require.js"></script>
+        <script>
+            require(['./common'], function (common) {
+				require(['../template']);
+            });
+        </script>
+
+        <div id="pageContent" style="display:none">
+
+			<div data-tem-role="topNav">
+				<button data-tem-role="refreshButton"></button>
+				<button data-tem-role="printButton"></button>
+			</div>
+
+					
+			<div data-tem-role="header">
+				<?hxlat ADF 2.3.0 - Template?>
+				<div id="lastUpdate" data-tem-role="lastUpdate"></div>	
+			</div>
+
+
+        </div>
+
+		]]>
+		</HTML>
+		</Page>
+	</Wizard>
+</BES>

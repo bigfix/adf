@@ -1,0 +1,35 @@
+<h1><code ng:non-bindable="">adfButton</code>
+<span class="hint">(directive in module <code ng:non-bindable="">adf-ng</code>
+)</span>
+</h1>
+<div><h2 id="Description">Description</h2>
+<div class="description"><p>A wrapper of jquery button</p></div>
+<h2 id="Usage">Usage</h2>
+<div class="usage">as attribute<pre class="prettyprint linenums">&lt;ANY adf-button&gt;
+   ...
+&lt;/ANY&gt;</pre>
+</div>
+<h2 id="Example">Example</h2>
+<div class="example"><h4>Source</h4>
+<div source-edit="adf-ng" source-edit-deps="angular.js script.js" source-edit-html="content.html" source-edit-css="" source-edit-js="script.js-0" source-edit-unit="" source-edit-scenario=""></div>
+<div class="tabbable"><div class="tab-pane" title="content.html">
+<pre class="prettyprint linenums" ng-set-text="content.html"></pre>
+<script type="text/ng-template" id="content.html">
+  <div ng-controller="MainController">
+      <button adf-button ng-click="sayHello()">Button</button>
+  </div>
+</script>
+</div>
+<div class="tab-pane" title="script.js">
+<pre class="prettyprint linenums" ng-set-text="script.js-0"></pre>
+<script type="text/ng-template" id="script.js-0">
+  function MainController($scope) {
+      $scope.sayHello = function(){
+      	alert('Hi there');
+      };
+  };
+</script>
+</div>
+</div><h4>Demo</h4>
+<div class="well doc-example-live animator-container" ng-embed-app="adf-ng" ng-set-html="content.html" ng-eval-javascript="script.js-0"></div></div>
+</div>

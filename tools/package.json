@@ -1,0 +1,19 @@
+{
+  "name": "adf-tools",
+  "version": "1.0.0",
+  "description": "Tools for dashboard build",
+  "dependencies": {
+    "stdio": "~0.1.2",
+    "connect": "~2.11.0"
+  },
+  "devDependencies": {
+    "grunt-jsdoc": "~0.4.1",
+    "grunt": "~0.4.1",
+    "grunt-ngdocs": "~0.1.1",
+    "grunt-contrib-connect": "~0.3.0",
+    "grunt-contrib-clean": "0.4.1",
+    "grunt-angular-templates": "~0.4.7",
+    "grunt-text-replace": "~0.3.9",
+    "grunt-contrib-copy": "~0.4.1"
+  }
+}

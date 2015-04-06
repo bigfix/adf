@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Namespace: context</title>
+    
+    <script src="http://shjs.sourceforge.net/sh_main.min.js"> </script>
+    <script src="http://shjs.sourceforge.net/lang/sh_javascript.min.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/node-dark.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+    
+    <h1 class="page-title">Namespace: context</h1>
+    
+    
+
+
+
+<section>
+    
+<header>
+    <h2>
+        <span class="ancestors"><a href="tem.html">tem</a>.</span>
+    
+    context
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description">Contains functions for determining information about the context a dashboard/wizard is running in (i.e. Console version, preferred language, and whether it is running in the Console or as a web report).</div>
+        
+        
+        
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 2223</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        <h3 class="subsection-title">Methods</h3>
+        
+        <dl>
+            
+<dt>
+    <h4 class="name" id="getBaseDirectory"><span class="type-signature">&lt;static> </span>getBaseDirectory</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Gets the absolute path to where the dashboard is being loaded from for applicationsrunning in the Console.  In Web Reports it returns the base href for report files.
+    </div>
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 2405</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+		<span class="param-type">String</span> 
+		
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="getCurrentDSN"><span class="type-signature">&lt;static> </span>getCurrentDSN</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <b>Not available in Web Reports</b> Returns a string containing the DSN name that the console is using to connect to the database. No error diagnostics are provided as this function does not have any expected error conditions.
+    </div>
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 2245</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    String containing the DSN name that the console is using to connect to the database.
+</div>
+
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+		<span class="param-type">String</span> 
+		
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="getCurrentUser"><span class="type-signature">&lt;static> </span>getCurrentUser</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <b>Not available in Web Reports</b> Returns a string containing the database login name that the console is using to connect to the database. No error diagnostics are provided as this function does not have any expected error conditions.
+    </div>
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 2256</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    String containing the database login name that the console is using to connect to the database.
+</div>
+
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+		<span class="param-type">String</span> 
+		
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="getPreferredLanguage"><span class="type-signature">&lt;static> </span>getPreferredLanguage</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <b>Available in: TEM 8.1+</b> Used to return language specified by "Console language" dropdown in File &lt; Preferences in the Console (ie ENU, CHS, JPN, ESN, ITA, FRA, DEU)
+    </div>
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 2267</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    String representation of user's preferred language as selected in the Console.
+</div>
+
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+		<span class="param-type">String</span> 
+		
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="getServerURL"><span class="type-signature">&lt;static> </span>getServerURL</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Gets URL for BES Server
+    </div>
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 2393</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    URL for BES Server.
+</div>
+
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+		<span class="param-type">String</span> 
+		
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="getUserLocale"><span class="type-signature">&lt;static> </span>getUserLocale</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Returns user <a href="http://msdn.microsoft.com/en-us/library/ms533052%28v=VS.85%29.aspx">locale</a>.  If running in an 8.1+ Console that supports selecting a preferred languagefrom the "Console language" dropdown in File &lt; Preferences, and a preferred language is selectedit will default to that, otherwise it will use navigator.browserLanguage or window.navigator.languageto determine locale.<p><b>Note:</b> Even though different browsers may return the locale as xx-XX as opposed to xx-xx, thisfunction always normalized the locale as xx-xx</p>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 2320</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <a href="http://msdn.microsoft.com/en-us/library/ms533052%28v=VS.85%29.aspx">Locale</a>in format xx-xx
+</div>
+
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+		<span class="param-type">String</span> 
+		
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="getVersion"><span class="type-signature">&lt;static> </span>getVersion</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Gets version of Console/Web reports an application is running in.
+    </div>
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 2365</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    String value of version
+</div>
+
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+		<span class="param-type">String</span> 
+		
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="getWindowHeight"><span class="type-signature">&lt;static> </span>getWindowHeight</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Gets height of the window containing the application.
+    </div>
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 2383</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    Height of window in pixels.
+</div>
+
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+		<span class="param-type">Number</span> 
+		
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="isInConsole"><span class="type-signature">&lt;static> </span>isInConsole</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Used to determine if the app is running in the Console or not (eg as opposedto web reports).
+    </div>
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 2284</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    True if the app is running in the console.
+</div>
+
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+		<span class="param-type">Boolean</span> 
+		
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
+        </dl>
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Namespaces</h3><ul><li><a href="$.fn.html">$.fn</a></li><li><a href="tem.html">tem</a></li><li><a href="tem.config.html">tem.config</a></li><li><a href="tem.consoleUtils.html">tem.consoleUtils</a></li><li><a href="tem.content.html">tem.content</a></li><li><a href="tem.context.html">tem.context</a></li><li><a href="tem.dataStore.html">tem.dataStore</a></li><li><a href="tem.file.html">tem.file</a></li><li><a href="tem.file.FileSystem.html">tem.file.FileSystem</a></li><li><a href="tem.file.scratchPad.html">tem.file.scratchPad</a></li><li><a href="tem.file.upload.html">tem.file.upload</a></li><li><a href="tem.javascriptUtils.html">tem.javascriptUtils</a></li><li><a href="tem.l10n.html">tem.l10n</a></li><li><a href="tem.library.html">tem.library</a></li><li><a href="tem.logging.html">tem.logging</a></li><li><a href="tem.model.html">tem.model</a></li><li><a href="tem.relevance.html">tem.relevance</a></li><li><a href="tem.relevance.queries.html">tem.relevance.queries</a></li><li><a href="tem.relevance.queries.computers.html">tem.relevance.queries.computers</a></li><li><a href="tem.shell.html">tem.shell</a></li><li><a href="temui.html">temui</a></li></ul><h3>Classes</h3><ul><li><a href="tem.library.JavaScriptLibrary.html">tem.library.JavaScriptLibrary</a></li><li><a href="tem.library.Library.html">tem.library.Library</a></li><li><a href="tem.model.ActionDescription.html">tem.model.ActionDescription</a></li><li><a href="tem.model.ActionSettings.html">tem.model.ActionSettings</a></li><li><a href="tem.model.Analysis.html">tem.model.Analysis</a></li><li><a href="tem.model.AnalysisProperty.html">tem.model.AnalysisProperty</a></li><li><a href="tem.model.BaseAction.html">tem.model.BaseAction</a></li><li><a href="tem.model.BaseActionSuccessCriteria.html">tem.model.BaseActionSuccessCriteria</a></li><li><a href="tem.model.BaseComputerGroupSearch.html">tem.model.BaseComputerGroupSearch</a></li><li><a href="tem.model.BaseFixlet.html">tem.model.BaseFixlet</a></li><li><a href="tem.model.Baseline.html">tem.model.Baseline</a></li><li><a href="tem.model.BaselineComponent.html">tem.model.BaselineComponent</a></li><li><a href="tem.model.BaselineComponentCollection.html">tem.model.BaselineComponentCollection</a></li><li><a href="tem.model.BaselineComponentGroup.html">tem.model.BaselineComponentGroup</a></li><li><a href="tem.model.ComputerGroup.html">tem.model.ComputerGroup</a></li><li><a href="tem.model.CustomRelevance.html">tem.model.CustomRelevance</a></li><li><a href="tem.model.DefaultAction.html">tem.model.DefaultAction</a></li><li><a href="tem.model.Fixlet.html">tem.model.Fixlet</a></li><li><a href="tem.model.FixletAction.html">tem.model.FixletAction</a></li><li><a href="tem.model.FixletWithActions.html">tem.model.FixletWithActions</a></li><li><a href="tem.model.MemberAction.html">tem.model.MemberAction</a></li><li><a href="tem.model.MIMEField.html">tem.model.MIMEField</a></li><li><a href="tem.model.MultipleActionGroup.html">tem.model.MultipleActionGroup</a></li><li><a href="tem.model.MultipleItems.html">tem.model.MultipleItems</a></li><li><a href="tem.model.OriginalRelevance.html">tem.model.OriginalRelevance</a></li><li><a href="tem.model.RunToCompletion.html">tem.model.RunToCompletion</a></li><li><a href="tem.model.SearchComponentGroupReference.html">tem.model.SearchComponentGroupReference</a></li><li><a href="tem.model.SearchComponentPropertyReference.html">tem.model.SearchComponentPropertyReference</a></li><li><a href="tem.model.SearchComponentRelevance.html">tem.model.SearchComponentRelevance</a></li><li><a href="tem.model.SingleAction.html">tem.model.SingleAction</a></li><li><a href="tem.model.SiteIdentifier.html">tem.model.SiteIdentifier</a></li><li><a href="tem.model.Task.html">tem.model.Task</a></li><li><a href="tem.model.WizardSource.html">tem.model.WizardSource</a></li><li><a href="tem.model.XMLSerializableObject.html">tem.model.XMLSerializableObject</a></li><li><a href="tem.model.XMLWrapper.html">tem.model.XMLWrapper</a></li><li><a href="tem.relevance.RelevanceData.html">tem.relevance.RelevanceData</a></li><li><a href="tem.shell.ShellWrapper.html">tem.shell.ShellWrapper</a></li><li><a href="tem.shell.SimpleExec.html">tem.shell.SimpleExec</a></li><li><a href="temui.chartContainer.html">temui.chartContainer</a></li><li><a href="temui.dataGrid.html">temui.dataGrid</a></li><li><a href="temui.filterInput.html">temui.filterInput</a></li><li><a href="temui.gridContainer.html">temui.gridContainer</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3</a> on Wed Jan 02 2013 17:00:22 GMT-0800 (PST)
+</footer>
+
+<script> sh_highlightDocument(); </script>
+</body>
+</html>

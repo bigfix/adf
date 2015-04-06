@@ -1,0 +1,68 @@
+<h1><code ng:non-bindable="">adfApp</code>
+<span class="hint">(directive in module <code ng:non-bindable="">adf-ng</code>
+)</span>
+</h1>
+<div><h2 id="Description">Description</h2>
+<div class="description"><p>adf-app is the top level element for the app.</p></div>
+<h2 id="Usage">Usage</h2>
+<div class="usage">as attribute<pre class="prettyprint linenums">&lt;ANY adf-app
+     [loading="{boolean}"]&gt;
+   ...
+&lt;/ANY&gt;</pre>
+<h3 id="Parameters">Parameters</h3>
+<ul class="parameters"><li><code ng:non-bindable="">loading<i>(optional)</i> – {boolean=} – </code>
+<p>Whether or not to show the loading screen.</p></li>
+</ul>
+</div>
+<div class="member property"><h2 id="Properties">Properties</h2>
+<ul class="properties"><li><h3 id="$scope.consoleVersion">$scope.consoleVersion</h3>
+<div class="$scope-consoleversion"><p>Console version</p></div>
+</li>
+<li><h3 id="$scope.inConsole">$scope.inConsole</h3>
+<div class="$scope-inconsole"><p>Whether or not the content is opened in console</p></div>
+</li>
+<li><h3 id="$scope.locale">$scope.locale</h3>
+<div class="$scope-locale"><p>User locale</p></div>
+</li>
+<li><h3 id="$scope.perferredLanguage">$scope.perferredLanguage</h3>
+<div class="$scope-perferredlanguage"><p>Console preferred language</p></div>
+</li>
+<li><h3 id="$scope.serverURL">$scope.serverURL</h3>
+<div class="$scope-serverurl"><p>Server URL</p></div>
+</li>
+<li><h3 id="$scope.baseDirectory">$scope.baseDirectory</h3>
+<div class="$scope-basedirectory"><p>Base directory of dashboard content</p></div>
+</li>
+<li><h3 id="$scope.currentDSN">$scope.currentDSN</h3>
+<div class="$scope-currentdsn"><p>Current DSN (not available in webreports)</p></div>
+</li>
+<li><h3 id="$scope.currentUser">$scope.currentUser</h3>
+<div class="$scope-currentuser"><p>Current user (not available in webreports)</p></div>
+</li>
+</ul>
+</div>
+<h2 id="Example">Example</h2>
+<div class="example"><h4>Source</h4>
+<div source-edit="adf-ng" source-edit-deps="angular.js script.js" source-edit-html="content.html" source-edit-css="" source-edit-js="script.js" source-edit-unit="" source-edit-scenario=""></div>
+<div class="tabbable"><div class="tab-pane" title="content.html">
+<pre class="prettyprint linenums" ng-set-text="content.html"></pre>
+<script type="text/ng-template" id="content.html">
+  <div ng-controller="MainController">
+      <div adf-app loading="pageLoading">
+          Page Content <br/>
+          Console version: {{consoleVersion}}.
+      </div>
+  </div>
+</script>
+</div>
+<div class="tab-pane" title="script.js">
+<pre class="prettyprint linenums" ng-set-text="script.js"></pre>
+<script type="text/ng-template" id="script.js">
+  function MainController($scope) {
+      $scope.pageLoading = false;
+  };
+</script>
+</div>
+</div><h4>Demo</h4>
+<div class="well doc-example-live animator-container" ng-embed-app="adf-ng" ng-set-html="content.html" ng-eval-javascript="script.js"></div></div>
+</div>

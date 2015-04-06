@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: dataGrid</title>
+    
+    <script src="http://shjs.sourceforge.net/sh_main.min.js"> </script>
+    <script src="http://shjs.sourceforge.net/lang/sh_javascript.min.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/node-dark.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+    
+    <h1 class="page-title">Class: dataGrid</h1>
+    
+    
+
+
+
+<section>
+    
+<header>
+    <h2>
+        <span class="ancestors"><a href="temui.html">temui</a>.</span>
+    
+    dataGrid
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+<dt>
+    <h4 class="name" id="dataGrid"><span class="type-signature"></span>new dataGrid</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <span style="font-weight:bold;">dataGrid</span> is the standard UI data grid component. Itextends the Slick.Grid component from the <a href="https://github.com/mleibman/SlickGrid">SlickGrid</a> jQuery library.  Included with the ADF under libs is the version of the SlickGrid library used by theADF along with its sample code. Please refer to its online/included documentation for details about the Slick.Grid component on which dataGrid based.
+    </div>
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+            
+            <td class="type">
+            
+                        Slick.Data.DataView
+                         | 
+                    
+                        Array
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>columns</code></td>
+            
+            
+            <td class="type">
+            
+                        Object[]
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">An array of object literals, that define the columns of the dataGrid.<code>var columns = [{id:"name", name:"Name", field:GridFixlet.LINK, sortable: true}]</code>The "columns" object can have the following properties (refer to SlickGrid documentation for more details):<ul><li>id</li><li>name</li><li>field</li><li>toolTip</li><li>width</li><li>minWidth</li><li>maxWidth</li><li>cssClass</li><li>focusable</li><li>resizable</li><li>sortable</li><li>selectable</li><li>formatter</li><li>editor</li><li>validator</li><li>groupTotalsFormatter</li><li>asyncPostRender</li><li>rerenderOnResize</li><li>cannotTriggerInsert</li></ul></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>gridOptions</code></td>
+            
+            
+            <td class="type">
+            
+                        Object
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Options used in configuration of the data grid (refer to SlickGrid documentation for more details):<ul>      <li>explicitInitialization: false</li><li>rowHeight: 25</li><li>defaultColumnWidth: 80</li><li>enableAddRow: false</li><li>leaveSpaceForNewRows: false</li><li>editable: false</li><li>autoEdit: true</li><li>enableCellNavigation: true</li><li>enableColumnReorder: true</li><li>asyncEditorLoading: false</li><li>asyncEditorLoadDelay: 100</li><li>forceFitColumns: false</li><li>enableAsyncPostRender: false</li><li>asyncPostRenderDelay: 60</li><li>autoHeight: false</li><li>editorLock: Slick.GlobalEditorLock</li><li>showHeaderRow: false</li><li>headerRowHeight: 25</li><li>showTopPanel: false</li><li>topPanelHeight: 25</li><li>formatterFactory: null</li><li>editorFactory: null</li><li>cellFlashingCssClass: "flashing"</li><li>selectedCellCssClass: "selected"</li><li>multiSelect: true</li><li>enableTextSelectionOnCells: false</li><li>dataItemColumnValueExtractor: null</li><li>fullWidthRows: false</li></ul></li></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/jQuery/ADFUI.js, line 1231</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+        <h5>Example</h5>
+        
+    <pre class="sh_javascript"><code>var grid = new temui.grid.DataGrid("#sampleGrid", dataView, columns});	</code></pre>
+
+    
+</dd>
+
+    
+    </div>
+    
+    
+        <h3 class="subsection-title">Extends</h3>
+        
+        <ul>
+            <li>Slick.Grid</li>
+        </ul>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Namespaces</h3><ul><li><a href="$.fn.html">$.fn</a></li><li><a href="tem.html">tem</a></li><li><a href="tem.config.html">tem.config</a></li><li><a href="tem.consoleUtils.html">tem.consoleUtils</a></li><li><a href="tem.content.html">tem.content</a></li><li><a href="tem.context.html">tem.context</a></li><li><a href="tem.dataStore.html">tem.dataStore</a></li><li><a href="tem.file.html">tem.file</a></li><li><a href="tem.file.FileSystem.html">tem.file.FileSystem</a></li><li><a href="tem.file.scratchPad.html">tem.file.scratchPad</a></li><li><a href="tem.file.upload.html">tem.file.upload</a></li><li><a href="tem.javascriptUtils.html">tem.javascriptUtils</a></li><li><a href="tem.l10n.html">tem.l10n</a></li><li><a href="tem.library.html">tem.library</a></li><li><a href="tem.logging.html">tem.logging</a></li><li><a href="tem.model.html">tem.model</a></li><li><a href="tem.relevance.html">tem.relevance</a></li><li><a href="tem.relevance.queries.html">tem.relevance.queries</a></li><li><a href="tem.relevance.queries.computers.html">tem.relevance.queries.computers</a></li><li><a href="tem.shell.html">tem.shell</a></li><li><a href="temui.html">temui</a></li></ul><h3>Classes</h3><ul><li><a href="tem.library.JavaScriptLibrary.html">tem.library.JavaScriptLibrary</a></li><li><a href="tem.library.Library.html">tem.library.Library</a></li><li><a href="tem.model.ActionDescription.html">tem.model.ActionDescription</a></li><li><a href="tem.model.ActionParameter.html">tem.model.ActionParameter</a></li><li><a href="tem.model.ActionSecureParameter.html">tem.model.ActionSecureParameter</a></li><li><a href="tem.model.ActionSettings.html">tem.model.ActionSettings</a></li><li><a href="tem.model.ActionTargetAllComputers.html">tem.model.ActionTargetAllComputers</a></li><li><a href="tem.model.ActionTargetByComputerID.html">tem.model.ActionTargetByComputerID</a></li><li><a href="tem.model.ActionTargetByComputerName.html">tem.model.ActionTargetByComputerName</a></li><li><a href="tem.model.ActionTargetByCustomRelevance.html">tem.model.ActionTargetByCustomRelevance</a></li><li><a href="tem.model.Analysis.html">tem.model.Analysis</a></li><li><a href="tem.model.AnalysisProperty.html">tem.model.AnalysisProperty</a></li><li><a href="tem.model.BaseAction.html">tem.model.BaseAction</a></li><li><a href="tem.model.BaseActionSuccessCriteria.html">tem.model.BaseActionSuccessCriteria</a></li><li><a href="tem.model.BaseActionTarget.html">tem.model.BaseActionTarget</a></li><li><a href="tem.model.BaseComputerGroupSearch.html">tem.model.BaseComputerGroupSearch</a></li><li><a href="tem.model.BaseFixlet.html">tem.model.BaseFixlet</a></li><li><a href="tem.model.Baseline.html">tem.model.Baseline</a></li><li><a href="tem.model.BaselineComponent.html">tem.model.BaselineComponent</a></li><li><a href="tem.model.BaselineComponentCollection.html">tem.model.BaselineComponentCollection</a></li><li><a href="tem.model.BaselineComponentGroup.html">tem.model.BaselineComponentGroup</a></li><li><a href="tem.model.ComputerGroup.html">tem.model.ComputerGroup</a></li><li><a href="tem.model.CustomRelevance.html">tem.model.CustomRelevance</a></li><li><a href="tem.model.DefaultAction.html">tem.model.DefaultAction</a></li><li><a href="tem.model.Fixlet.html">tem.model.Fixlet</a></li><li><a href="tem.model.FixletAction.html">tem.model.FixletAction</a></li><li><a href="tem.model.FixletWithActions.html">tem.model.FixletWithActions</a></li><li><a href="tem.model.MemberAction.html">tem.model.MemberAction</a></li><li><a href="tem.model.MIMEField.html">tem.model.MIMEField</a></li><li><a href="tem.model.MultipleActionGroup.html">tem.model.MultipleActionGroup</a></li><li><a href="tem.model.MultipleItems.html">tem.model.MultipleItems</a></li><li><a href="tem.model.OriginalRelevance.html">tem.model.OriginalRelevance</a></li><li><a href="tem.model.RunToCompletion.html">tem.model.RunToCompletion</a></li><li><a href="tem.model.SearchComponentGroupReference.html">tem.model.SearchComponentGroupReference</a></li><li><a href="tem.model.SearchComponentPropertyReference.html">tem.model.SearchComponentPropertyReference</a></li><li><a href="tem.model.SearchComponentRelevance.html">tem.model.SearchComponentRelevance</a></li><li><a href="tem.model.SingleAction.html">tem.model.SingleAction</a></li><li><a href="tem.model.SiteIdentifier.html">tem.model.SiteIdentifier</a></li><li><a href="tem.model.Task.html">tem.model.Task</a></li><li><a href="tem.model.WizardSource.html">tem.model.WizardSource</a></li><li><a href="tem.model.XMLSerializableObject.html">tem.model.XMLSerializableObject</a></li><li><a href="tem.model.XMLWrapper.html">tem.model.XMLWrapper</a></li><li><a href="tem.relevance.RelevanceData.html">tem.relevance.RelevanceData</a></li><li><a href="tem.shell.ShellWrapper.html">tem.shell.ShellWrapper</a></li><li><a href="tem.shell.SimpleExec.html">tem.shell.SimpleExec</a></li><li><a href="temui.analysisWarning.html">temui.analysisWarning</a></li><li><a href="temui.chartContainer.html">temui.chartContainer</a></li><li><a href="temui.dataGrid.html">temui.dataGrid</a></li><li><a href="temui.filterInput.html">temui.filterInput</a></li><li><a href="temui.gridContainer.html">temui.gridContainer</a></li><li><a href="temui.message.html">temui.message</a></li><li><a href="temui.popupMessage.html">temui.popupMessage</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3</a> on Mon Mar 18 2013 23:01:17 GMT+0800 (SGT)
+</footer>
+
+<script> sh_highlightDocument(); </script>
+</body>
+</html>

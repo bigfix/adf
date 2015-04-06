@@ -1,0 +1,79 @@
+<h1><code ng:non-bindable="">adfChartContainer</code>
+<span class="hint">(directive in module <code ng:non-bindable="">adf-ng</code>
+)</span>
+</h1>
+<div><h2 id="Description">Description</h2>
+<div class="description"><p>Chart container contains a chart item. It adds chart title and resizes its chart component when needed.</p></div>
+<h2 id="Usage">Usage</h2>
+<div class="usage">as attribute<pre class="prettyprint linenums">&lt;ANY adf-chart-container
+     header="{String}"
+     [resizeFn="{Function}"]&gt;
+   ...
+&lt;/ANY&gt;</pre>
+<h3 id="Parameters">Parameters</h3>
+<ul class="parameters"><li><code ng:non-bindable="">header – {String} – </code>
+<p>Chart header</p></li>
+<li><code ng:non-bindable="">resizeFn<i>(optional)</i> – {Function=} – </code>
+<p>Returns a function that can be called to force chart resize</p></li>
+</ul>
+</div>
+<h2 id="Example">Example</h2>
+<div class="example"><h4>Source</h4>
+<div source-edit="adf-ng" source-edit-deps="angular.js script.js" source-edit-html="content.html" source-edit-css="" source-edit-js="script.js-1" source-edit-unit="" source-edit-scenario=""></div>
+<div class="tabbable"><div class="tab-pane" title="content.html">
+<pre class="prettyprint linenums" ng-set-text="content.html"></pre>
+<script type="text/ng-template" id="content.html">
+  <div ng-controller="ChartController">
+      <div adf-chart-container header="Chart Title">
+          <div adf-bar-chart 
+              chart-data="barCharData" 
+              chart-options="barCharOptions"
+              chart-click="onBarCharDataClicked(seriesIndex, pointIndex, data)"
+              style="height: 250px; width: 100%"
+          />
+      </div>
+  </div>
+</script>
+</div>
+<div class="tab-pane" title="script.js">
+<pre class="prettyprint linenums" ng-set-text="script.js-1"></pre>
+<script type="text/ng-template" id="script.js-1">
+function ChartController($scope) {
+  var chartSeries1 = [[923,1], [910,2], [969,3], [964,4], [959,5]];
+  var chartSeries2 = [[37,1], [50,2], [27,3], [24,4], [20,5]];
+  var ticks = ["Other", "Important", "Critical", "Moderate", "Low"];
+  $scope.barCharData = [chartSeries1, chartSeries2];
+  
+  $scope.barCharOptions = {
+      highlighter: {
+          show: true,
+          showTooltip: true,
+          tooltipAxes: 'x',
+          formatString:'Endpoints: %s'
+      },
+      series: [{label:"Unpatched", color:"#cd1717"}, {label:"Patched", color:"#A5BC4E"}],
+      axes: {
+          yaxis: {
+              ticks: ticks
+          },
+          xaxis: {
+              label:'# of Patched/Unpatched Endpoints'
+          }
+      },
+      stackSeries: true,
+      legend: {
+          show: true,
+          placement:"inside",
+          location:"se"
+      }
+  };
+
+  $scope.onBarCharDataClicked = function(seriesIndex, pointIndex, data){
+      alert('seriesIndex: ' + seriesIndex + ', pointIndex:' + pointIndex + ', data: '+data);
+  };
+}
+</script>
+</div>
+</div><h4>Demo</h4>
+<div class="well doc-example-live animator-container" ng-embed-app="adf-ng" ng-set-html="content.html" ng-eval-javascript="script.js-1"></div></div>
+</div>

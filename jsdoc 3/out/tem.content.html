@@ -1,0 +1,4156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Namespace: content</title>
+    
+    <script src="http://shjs.sourceforge.net/sh_main.min.js"> </script>
+    <script src="http://shjs.sourceforge.net/lang/sh_javascript.min.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/node-dark.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+    
+    <h1 class="page-title">Namespace: content</h1>
+    
+    
+
+
+
+<section>
+    
+<header>
+    <h2>
+        <span class="ancestors"><a href="tem.html">tem</a>.</span>
+    
+    content
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description">Contains functions for creating, editing, and deleting content (fixlets/tasks/analyses/baselines/computergroups) as well as triggering certain content functionality and opening content and computer document windows.</div>
+        
+        
+        
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 1465</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        <h3 class="subsection-title">Methods</h3>
+        
+        <dl>
+            
+<dt>
+    <h4 class="name" id="activateAnalyses"><span class="type-signature">&lt;static> </span>activateAnalyses</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <b>Not available in Web Reports</b> Used to activate analyses.
+    </div>
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>analysisIDs</code></td>
+            
+            
+            <td class="type">
+            
+                        String
+                         | 
+                    
+                        Array
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Individual elements in the array must be strings of format 'siteid:analysisid' or a single string of format 'siteid:analysisid' can be specified for a single analysis</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 2032</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="addFileToMailbox"><span class="type-signature">&lt;static> </span>addFileToMailbox</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <b>Added in IEM 9.0 (Gilman)</b><br/><b>Not available in Web Reports</b> <p>Adds the file pointed to by <i>filePath</i> on the local console's filesystem to the mailbox for computer <i>computerID</i>. The computer should be notified and gather the file into its mailbox at __BESData\mailboxsite\<i>fileName</i>. </p><p>If a file named <fileName> already exists in the mailbox, it will be overwritten with the contents at <i>filePath</i>.</p>
+    </div>
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>computerID</code></td>
+            
+            
+            <td class="type">
+            
+                        Number
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>filePath</code></td>
+            
+            
+            <td class="type">
+            
+                        String
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Local file path</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>fileName</code></td>
+            
+            
+            <td class="type">
+            
+                        String
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">File name in mailboxsite</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 2207</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="addFileToSite"><span class="type-signature">&lt;static> </span>addFileToSite</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <b>Added in IEM 9.0 (Gilman)</b><br/><b>Not available in Web Reports</b> <p>Adds the file pointed to by <i>filePath</i> on the local console's filesystem to the custom site <i>siteNameStr</i>.</p><p>If <i>siteNameStr</i> is null or empty, the file is added to the master action site if the current console user is a master operator,or the user's operator site if the user is a non-master operator.</p><p>The file will be sent down to agent machines only if <i>clientFile</i> is set to true; otherwise it will be added to the site as a non-client file.</p>
+    </div>
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>siteName</code></td>
+            
+            
+            <td class="type">
+            
+                        String
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Custom site's name</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>filePath</code></td>
+            
+            
+            <td class="type">
+            
+                        String
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Local file path</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>clientFile</code></td>
+            
+            
+            <td class="type">
+            
+                        Boolean
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Specifies whether the added file is a client file or non-client file</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 2190</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="copyFixlets"><span class="type-signature">&lt;static> </span>copyFixlets</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <b>Not available in Web Reports</b> Used to copy multiple fixlets to the default Master Action Site. <p>Sample Usage:</p><pre> tem.content.copyFixlets(new Array({fixletID: 452, siteID: 2147495801},                             {fixletID: 453, siteID: 2147495801}), false, true);</pre>
+    </div>
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		<th>Default</th>
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>sourceFixlets</code></td>
+            
+            
+            <td class="type">
+            
+                        Array
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                </td>
+            
+            
+            <td class="description last">An array of &lt;fixletID, siteID&gt; tuples.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>skipUI</code></td>
+            
+            
+            <td class="type">
+            
+                        Boolean
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+            
+            <td class="description last">Optionally skip the user interface. Note this will apply to all.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>openDocuments</code></td>
+            
+            
+            <td class="type">
+            
+                        Boolean
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    true
+                
+                </td>
+            
+            
+            <td class="description last">Specifies whether to open documents corresponding to newlyimported items after they are imported.</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 1911</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="copyFixletsToSite"><span class="type-signature">&lt;static> </span>copyFixletsToSite</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <b>Not available in Web Reports</b> Used to copy multiple fixlets to a specific custom site. <p>Sample Usage:</p><pre>tem.content.copyFixletsToSite(new Array({fixletID: 452, siteID: 2147495801},{fixletID: 453, siteID: 2147495801}),                                 false,                                 "destinationCustomSiteName",                                 true);</pre>
+    </div>
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		<th>Default</th>
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>sourceFixlets</code></td>
+            
+            
+            <td class="type">
+            
+                        Array
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                </td>
+            
+            
+            <td class="description last">An array of &lt;fixletID, siteID&gt; tuples where siteID represents the source siteID.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>skipUI</code></td>
+            
+            
+            <td class="type">
+            
+                        Boolean
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+            
+            <td class="description last">Optionally skip the user interface. Note this will apply to all.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>destinationSiteName</code></td>
+            
+            
+            <td class="type">
+            
+                        String
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    (Master Action Site)
+                
+                </td>
+            
+            
+            <td class="description last">A string indicating the destination custom site to which a copy of said sourceFixlets will be made.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>openDocuments</code></td>
+            
+            
+            <td class="type">
+            
+                        Boolean
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    true
+                
+                </td>
+            
+            
+            <td class="description last">Specifies whether to open documents corresponding to newlyimported items after they are imported.</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 1951</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="copyFixletsToSites"><span class="type-signature">&lt;static> </span>copyFixletsToSites</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <b>Not available in Web Reports</b> Used to copy multiple fixlets to multiple custom sites. <p>Sample Usage:</p><pre>tem.content.copyFixletsToSites(new Array({fixletID: 452,siteID: 2147495801},{fixletID: 453, siteID: 2147495801),                                  false,                                  new Array("destination-site-1", "destination-site-2"),                                  true);</pre>
+    </div>
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		<th>Default</th>
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>sourceFixlets</code></td>
+            
+            
+            <td class="type">
+            
+                        Array
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                </td>
+            
+            
+            <td class="description last">An array of &lt;fixletID, siteID&gt; tuples where siteID represents the source siteID.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>skipUI</code></td>
+            
+            
+            <td class="type">
+            
+                        Boolean
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+            
+            <td class="description last">Optionally skip the user interface. Note this will apply to all.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>destinationSites</code></td>
+            
+            
+            <td class="type">
+            
+                        Array
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    Master Action Site
+                
+                </td>
+            
+            
+            <td class="description last">Indicates the names of destination custom sites to which the copies of sourceFixlets will be made.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>openDocuments</code></td>
+            
+            
+            <td class="type">
+            
+                        Boolean
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    true
+                
+                </td>
+            
+            
+            <td class="description last">Specifies whether to open documents corresponding to newlyimported items after they are imported.</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 1991</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="createContent"><span class="type-signature">&lt;static> </span>createContent</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <b>Not available in Web Reports</b> This function can be used to create content and is similar to <a href="tem.content.html#importXML">tem.content.importXML</a>, except that it works with model objects that are subclasses of XMLSerializableObject instead of XML.
+    </div>
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		<th>Default</th>
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>contentModel</code></td>
+            
+            
+            <td class="type">
+            
+                        <a href="tem.model.XMLSerializableObject.html">tem.model.XMLSerializableObject</a>
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                </td>
+            
+            
+            <td class="description last">Model object subclass of XMLSerializableObject that has all of its state set and is ready for import into the console for content creation.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>skipUI</code></td>
+            
+            
+            <td class="type">
+            
+                        Boolean
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+            
+            <td class="description last">If set to true, the console window asking for user confirmation oncontent creation will be suppressed and the content will automatically get createdbehind the scenes.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>openDocuments</code></td>
+            
+            
+            <td class="type">
+            
+                        Boolean
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    true
+                
+                </td>
+            
+            
+            <td class="description last">Specifies whether to open documents corresponding to newlyimported items after they are imported.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>wizardSource</code></td>
+            
+            
+            <td class="type">
+            
+                        <a href="tem.model.WizardSource.html">tem.model.WizardSource</a>
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+            
+            <td class="description last">Used to associate the created content with a particular named wizard.  Useful for being able to "reload" created content back into a wizardand for generally being able to query a particular set of content by a standard metadata attribute(ultimately the WizardSource info is stored as a MIMEField).</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>customSiteName</code></td>
+            
+            
+            <td class="type">
+            
+                        String
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+            
+            <td class="description last"><b>TEM 8.1+ Only</b> Used to import into a custom site, set this value to name of custom site. Defaults to your operator site.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>computerIds</code></td>
+            
+            
+            <td class="type">
+            
+                        Array
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                </td>
+            
+            
+            <td class="description last"><b>TEM 8.1+ Only</b> A list of computer IDs, so that for content where a Take Action Dialog can be applied at a later point, the user will only be able to target those computers if targeting by computer ID. Note that if targeting by name or property, other computers can also be targeted.</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 1800</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="createCustomSite"><span class="type-signature">&lt;static> </span>createCustomSite</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <b>Not available in Web Reports</b> Used to create a custom site. Only master operators can create custom sites. Validate that the current user is a master operator before calling this function. The function will fail if the current user is not a master operator, the site name is not valid, or if the site name already exists.
+    </div>
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>siteName</code></td>
+            
+            
+            <td class="type">
+            
+                        String
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Valid custom site names cannot contain ' " ' or ' \n '. They cannot end with with a space character. The length must be less than or equal to 32 bytes.</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 2171</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="deactivateAnalyses"><span class="type-signature">&lt;static> </span>deactivateAnalyses</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <b>Not available in Web Reports</b> Used to deactivate analyses
+    </div>
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>analysisIDs</code></td>
+            
+            
+            <td class="type">
+            
+                        String
+                         | 
+                    
+                        Array
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Individual elements in the array must be strings of format 'siteid:analysisid' or a single string of format 'siteid:analysisid' can be specified for a single analysis</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 2047</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="deleteContent"><span class="type-signature">&lt;static> </span>deleteContent</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <b>Not available in Web Reports</b> Used to delete existing fixlets/tasks/analyses/baselines/computergroups.<p>The following expression returns names of bes fixlets that are deletable by the current console user (the difference from editing is that master operators can delete fixlets in an operator site, but not edit them):</p><pre>	 names of bes fixlets whose	 (custom flag of it 	  and	   (if	       custom site flag of it 	     then	       (	         master flag of current console user 	        or	         exists it 	         whose	         (name of current console user = name of it)	         of elements of union of 	         (owner set of it; writer set of it)	         of custom site of it	       )	     else	       ((master flag of current console user)	        or	         (name of issuer of it = name of current console user)	       )	   )	 )</pre>
+    </div>
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>fixletIDs</code></td>
+            
+            
+            <td class="type">
+            
+                        Number
+                         | 
+                    
+                        Array
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Can pass an Array or single Number</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 1886</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="deleteProperties"><span class="type-signature">&lt;static> </span>deleteProperties</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <b>Not available in Web Reports</b> Used to delete existing global properties.
+    </div>
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>propertyIDs</code></td>
+            
+            
+            <td class="type">
+            
+                        Number
+                         | 
+                    
+                        Array
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 2004</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="editContent"><span class="type-signature">&lt;static> </span>editContent</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <b>Not available in Web Reports</b> This function can be used to edit content and is similar to <a href="tem.content.html#importXML">tem.content.importXML</a>, except that it works with model objects that are subclasses of XMLSerializableObject instead of XML.
+    </div>
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		<th>Default</th>
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>contentID</code></td>
+            
+            
+            <td class="type">
+            
+                        Number
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                </td>
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>contentModel</code></td>
+            
+            
+            <td class="type">
+            
+                        <a href="tem.model.XMLSerializableObject.html">tem.model.XMLSerializableObject</a>
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                </td>
+            
+            
+            <td class="description last">Model object subclass of XMLSerializableObject that has all of its state set and is ready for import into the console for content creation.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>skipUI</code></td>
+            
+            
+            <td class="type">
+            
+                        Boolean
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+            
+            <td class="description last">If set to true, the console window asking for user confirmation oncontent creation will be suppressed and the content will automatically get createdbehind the scenes.</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 1841</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="importXML"><span class="type-signature">&lt;static> </span>importXML</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <b>Not available in Web Reports</b> Used to create content (Fixlet, Action, Analysis, Property, Baseline, ComputerGroup, Task).<p>This function is similar to <a href="tem.content.html#createContent">tem.content.createContent</a> except that it works with XML instead of model objects.</p><p>Note that you can construct your XML through string manipulation if you like, or you can use the XML Document Object Model provided by Microsoft via the HTML tag "xml" like this:</p><pre>&lt;xml id="myXMLDocument"&gt;  &lt;?xml version="1.0" encoding="UTF-8"?&gt;    &lt;BES&gt;      &lt;Fixlet&gt;        &lt;Title&gt;New Fixlet&lt;/Title&gt;          more XML here      &lt;/Fixlet&gt;    &lt;/BES&gt;  &lt;/xml&gt;</pre><p>Then you can access the DOM using script like this:</p> <pre> var doc = myXMLDocument.XMLDocument; var t = doc.selectSingleNode("BES/Fixlet/Title"); t.text = "My Title"; tem.content.importXML(doc.xml); </pre>  <p>For more information on using the XML DOM,  see <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/xmlsdk/html/e9da2722-7879-4e48-869c-7f16714e2824.asp"/>Microsoft documentation</a>. </p>  <p> If the import is successful, it returns an array of object IDs corresponding to  and in the same order as the object elements in the XML. If the import is cancelled, it returns  the JavaScript 'undefined' value. If something else goes wrong (for example, if the XML is invalid)  a Javascript exception is thrown. Here's an example import: </p>  <pre> function ImportAction(){   try {     result_ids = tem.content.importXML(ActionXML.xml, false);   } catch (e) {     alert('There was an error importing the action.');     return false;   }   if (!result_ids) {     alert('The action import was cancelled.');   }								 } </pre>
+    </div>
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		<th>Default</th>
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>xml</code></td>
+            
+            
+            <td class="type">
+            
+                        String
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                </td>
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>openDocuments</code></td>
+            
+            
+            <td class="type">
+            
+                        Boolean
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    true
+                
+                </td>
+            
+            
+            <td class="description last">Specifies whether to open documents corresponding to newlyimported items after they are imported.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>customSiteName</code></td>
+            
+            
+            <td class="type">
+            
+                        String
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                </td>
+            
+            
+            <td class="description last"><b>TEM 8.1+ Only</b> Used to import into a custom site, set this value to name of site. To import into your operator site, set customSiteName to undefined.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>computerIDs</code></td>
+            
+            
+            <td class="type">
+            
+                        Array
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                </td>
+            
+            
+            <td class="description last"><b>TEM 8.1+ Only</b> A list of computer IDs, so that for content where a Take Action Dialog can be applied at a later point, the user will only be able to target those computers if targeting by computer ID. Note that if targeting by name or property, other computers can also be targeted.</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 1665</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    If the import is successful, it returns an array of object IDs corresponding to and in the same order as the object elements in the XML. If the import is cancelled, it returns the JavaScript 'undefined' value.
+</div>
+
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+		<span class="param-type">Array</span> 
+		
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="importXMLForEdit"><span class="type-signature">&lt;static> </span>importXMLForEdit</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <b>Not available in Web Reports</b> Used to edit an existing fixlet/task/analysis/baseline/computergroup.<p>Similar to <a href="tem.content.html#editContent">tem.content.editContent</a> except it works with XMLinstead of a model object.</p><p>The xml parameter is a BES XML representation of the fixlet.</p> <pre>&lt;?xml ...?&gt;  &lt;BES&gt;    &lt;Fixlet&gt;...&glt;/Fixlet&gt;  &lt;/BES&gt;</pre>  <p>The following expression returns names of bes fixlets that are editable by the current console user:</p>  <pre>	names of bes fixlets 	 whose	 (custom flag of it 	  and	   (if	       custom site flag of it 	     then	       (master flag of current console user 	        or	         exists it 	         whose	         (name of current console user = name of it)	         of elements of union of 	         (owner set of it; writer set of it)	         of custom site of it	       )	     else	       (	         (master site flag of it 	          and	           master flag of current console user	         )	        or	         (name of issuer of it = name of current console user)	       )	   )	 )  </pre>
+    </div>
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>contentId</code></td>
+            
+            
+            <td class="type">
+            
+                        Number
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>xml</code></td>
+            
+            
+            <td class="type">
+            
+                        String
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 1757</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    <h5>Throws:</h5>
+    
+            
+<div class="param-desc">
+    UserCancelled If the user presses the cancel button when prompted for the console password, <b>unlike tem.content.importXML()</b>
+</div>
+
+
+
+        
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="importXMLToSite"><span class="type-signature">&lt;static> </span>importXMLToSite</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <b>Not available in Web Reports</b> Similar to importXML, used to create content in a specific custom site.
+    </div>
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		<th>Default</th>
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>xml</code></td>
+            
+            
+            <td class="type">
+            
+                        String
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                </td>
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>openDocuments</code></td>
+            
+            
+            <td class="type">
+            
+                        Boolean
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                    true
+                
+                </td>
+            
+            
+            <td class="description last">Specifies whether to open documents corresponding to newlyimported items after they are imported.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>customSiteName</code></td>
+            
+            
+            <td class="type">
+            
+                        String
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+                <td class="default">
+                
+                </td>
+            
+            
+            <td class="description last">Used to import into a custom site, set this value to name of custom site. To import into your operator site, set customSiteName to undefined.</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 1692</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    If the import is successful, it returns an array of object IDs corresponding to and in the same order as the object elements in the XML. If the import is cancelled, it returns the JavaScript 'undefined' value.
+</div>
+
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+		<span class="param-type">Array</span> 
+		
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="isAnalysisActive"><span class="type-signature">&lt;static> </span>isAnalysisActive</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Used to check if analysis is active.
+    </div>
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>analysisID</code></td>
+            
+            
+            <td class="type">
+            
+                        Numer
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>siteKey</code></td>
+            
+            
+            <td class="type">
+            
+                        String
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">Key of the SiteIdentifier listed in tem.config.sites array.  If not specified, thedefault site will be used (first site in tem.config.sites)</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 2020</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="openAction"><span class="type-signature">&lt;static> </span>openAction</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Opens document window for an action.
+    </div>
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>actionID</code></td>
+            
+            
+            <td class="type">
+            
+                        Number
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 1480</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="openComputer"><span class="type-signature">&lt;static> </span>openComputer</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Opens document window for a computer.
+    </div>
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>computerId</code></td>
+            
+            
+            <td class="type">
+            
+                        Number
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 1518</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="openComputerGroup"><span class="type-signature">&lt;static> </span>openComputerGroup</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Opens a computer group document in the console for an ad hoc set of computers, similar to how in the console you can select a set of computers in a computer list,right click, and select "View As Group" to open a computer group document that displays the selected set of computers as if they were a computer group.<p>Call the function with an array of computer ids, or a single computer id.Here are two examples:</p><pre>Example 1:tem.content.openComputerGroup(tem.evalRel("ids of bes computers"));Example 2:var ids = tem.evalRel("ids of bes computers");var first5 = new Array(5);for (var i = 0; i < 5; i++) {  first5[i] = ids[i];}tem.content.openComputerGroup(first5);</pre><p>The Console enables setting the computer group title, as follows:</p><pre>tem.content.openComputerGroup(cids, "Computers needing patch X");</pre><p>TEM enables tem.content.openComputerGroup() in Web Reports. However, whenWeb Reports aggregates multiple databases, this function will return every computerthat matches any of the given ids across all databases. (For example, when callingtem.content.openComputerGroup( 1 ), if Web Reports is aggregating databases A andB, and both contain a computer with an id of "1", both computers will be returned asresults.)</p>
+    </div>
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>cids</code></td>
+            
+            
+            <td class="type">
+            
+                        Number
+                         | 
+                    
+                        String
+                         | 
+                    
+                        Array
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">Array of computer ids, or a single computer id. Strings convertible to numbers will be converted automatically.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>title</code></td>
+            
+            
+            <td class="type">
+            
+                        String
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">Title that appears in document popup</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 1571</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="openComputerGroupById"><span class="type-signature">&lt;static> </span>openComputerGroupById</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Similar to openComputerGroup, it will open a computer group document for a specified computer group id.
+    </div>
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>groupId</code></td>
+            
+            
+            <td class="type">
+            
+                        Number
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">Computer group id</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>title</code></td>
+            
+            
+            <td class="type">
+            
+                        String
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">Title that appears in document popup</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 1582</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="openFixlet"><span class="type-signature">&lt;static> </span>openFixlet</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        Opens document window for a fixlet.
+    </div>
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>fixletID</code></td>
+            
+            
+            <td class="type">
+            
+                        Number
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>siteKey</code></td>
+            
+            
+            <td class="type">
+            
+                        String
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">Key of the SiteIdentifier listed in tem.config.sites array.  If not specified, thedefault site will be used (first site in tem.config.sites)</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 1499</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="reactivateAnalyses"><span class="type-signature">&lt;static> </span>reactivateAnalyses</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <b>Not available in Web Reports</b> Used to reactivate analyses.
+    </div>
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>analysisIDs</code></td>
+            
+            
+            <td class="type">
+            
+                        String
+                         | 
+                    
+                        Array
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Individual elements in the array must be strings of format 'siteid:analysisid' or a single string of format 'siteid:analysisid' can be specified for a single analysis</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 2061</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="stopActions"><span class="type-signature">&lt;static> </span>stopActions</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <b>Not available in Web Reports</b> Used to stop a set of actions
+    </div>
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>actionIDs</code></td>
+            
+            
+            <td class="type">
+            
+                        Number
+                         | 
+                    
+                        Array
+                        
+                    
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">Can be individual Number for a single action</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 2077</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    true if successful, false if error or cancelled.
+</div>
+
+
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+		<span class="param-type">Boolean</span> 
+		
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="takeFixletAction"><span class="type-signature">&lt;static> </span>takeFixletAction</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <b>Not available in Web Reports</b> Used to bring up the take action dialog as if the user had clicked the take action link in a fixlet,it returns immediately and the take action dialog will be non-modal. The resulting action will be associated with the source Fixlet just as if the user clicked the take action link in the Fixlet.<p>You can optionally supply custom action parameters and a callback function that will be called after the action is created:</p><pre>tem.content.takeFixletAction(tem.evalRel('id of current fixlet'),                              tem.evalRel('id of current bes site'),                              'Action1',                              {'Parameter1': 'Value1', 'Parameter2': 'Value2'},                              function(id){alert('Took an action with id ' + id);});</pre>
+    </div>
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>fixletID</code></td>
+            
+            
+            <td class="type">
+            
+                        Number
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>siteID</code></td>
+            
+            
+            <td class="type">
+            
+                        Number
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">Note: The type of siteID is such that you can't pass the decimal version of the action site ID returned from Relevance, since the action site ID will be bigger than the largest signed integer. So in order to take an action on a custom fixlet, whose siteID is the action site ID: <pre>tem.content.takeFixletAction( fixletID, tem.evalRel('id of bes site whose (name of it is "ActionSite")')>>>0, contentID )</pre></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>contentID</code></td>
+            
+            
+            <td class="type">
+            
+                        String
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">i.e. id of the type returned by the "content id of <fixlet action>" inspector</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>parameters</code></td>
+            
+            
+            <td class="type">
+            
+                        Object
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">A JavaScript object whose property-value pairs will be used as action parameters. The user will be prompted for any parameters used in the script that are not specified in the object.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+            
+            <td class="type">
+            
+                        Function
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">A function taking one argument, the ID of the action that has been created. If the user cancels the Take Action dialog, the callback will not be called.</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 2115</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="takeSecureFixletAction"><span class="type-signature">&lt;static> </span>takeSecureFixletAction</h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <b>Added in IEM 9.0 (Gilman)</b><br/><b>Not available in Web Reports</b><p>Similar to tem.content.takeFixletAction, and allows adding secure parameters. Using secure parameters forces the action to be targeted statically, and then added to the mailboxes of any targeted agents. The parameters are encrypted so that only the targeted agents will be able to access them. They can then be used in the action script just like normal parameters</p><p>You can optionally supply custom action parameters and a callback function that will be called after the action is created:</p><p>You can optionally supply custom action parameters and a callback function that will be called after the action is created:</p><pre>tem.content.takeSecureFixletAction(tem.evalRel('id of current fixlet'),                                 tem.evalRel('id of current bes site'),                                 'Action1',                                 {'Parameter1': 'Value1', 'Parameter2': 'Value2'},                                 {'SecureParameter1': 'Value1', 'SecureParameter2': 'Value2'},                                 function(id){alert('Took an action with id ' + id);});</pre>
+    </div>
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		<th>Argument</th>
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>fixletID</code></td>
+            
+            
+            <td class="type">
+            
+                        Number
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>siteID</code></td>
+            
+            
+            <td class="type">
+            
+                        Number
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">Note: The type of siteID is such that you can't pass the decimal version of the action site ID returned from Relevance, since the action site ID will be bigger than the largest signed integer. So in order to take an action on a custom fixlet, whose siteID is the action site ID: <pre>tem.content.takeSecureFixletAction( fixletID, tem.evalRel('id of bes site whose (name of it is "ActionSite")')>>>0, contentID )</pre></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>contentID</code></td>
+            
+            
+            <td class="type">
+            
+                        String
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">i.e. id of the type returned by the "content id of <fixlet action>" inspector</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>parameters</code></td>
+            
+            
+            <td class="type">
+            
+                        Object
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">A JavaScript object whose property-value pairs will be used as action parameters. The user will be prompted for any parameters used in the script that are not specified in the object.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>secureParameters</code></td>
+            
+            
+            <td class="type">
+            
+                        Object
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">A JavaScript object whose property-value pairs will be used as action parameters. Their values are double encrypted. When action is executed, secure parameter is decrypted.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>callback</code></td>
+            
+            
+            <td class="type">
+            
+                        Function
+                        
+                    
+            </td>
+            
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+                    
+                
+                </td>
+            
+            
+            
+            
+            <td class="description last">A function taking one argument, the ID of the action that has been created. If the user cancels the Take Action dialog, the callback will not be called.</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<dt class="tag-source">Source:</dt>
+	<dd class="tag-source"><ul class="dummy"><li>../src/ADF/API/ADFAPI.js, line 2157</li></ul></dd>
+	
+    
+    
+	
+	
+	
+	
+</dl>
+
+    
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        </dl>
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Namespaces</h3><ul><li><a href="$.fn.html">$.fn</a></li><li><a href="tem.html">tem</a></li><li><a href="tem.config.html">tem.config</a></li><li><a href="tem.consoleUtils.html">tem.consoleUtils</a></li><li><a href="tem.content.html">tem.content</a></li><li><a href="tem.context.html">tem.context</a></li><li><a href="tem.dataStore.html">tem.dataStore</a></li><li><a href="tem.file.html">tem.file</a></li><li><a href="tem.file.FileSystem.html">tem.file.FileSystem</a></li><li><a href="tem.file.scratchPad.html">tem.file.scratchPad</a></li><li><a href="tem.file.upload.html">tem.file.upload</a></li><li><a href="tem.javascriptUtils.html">tem.javascriptUtils</a></li><li><a href="tem.l10n.html">tem.l10n</a></li><li><a href="tem.library.html">tem.library</a></li><li><a href="tem.logging.html">tem.logging</a></li><li><a href="tem.model.html">tem.model</a></li><li><a href="tem.relevance.html">tem.relevance</a></li><li><a href="tem.relevance.queries.html">tem.relevance.queries</a></li><li><a href="tem.relevance.queries.computers.html">tem.relevance.queries.computers</a></li><li><a href="tem.shell.html">tem.shell</a></li><li><a href="temui.html">temui</a></li></ul><h3>Classes</h3><ul><li><a href="tem.library.JavaScriptLibrary.html">tem.library.JavaScriptLibrary</a></li><li><a href="tem.library.Library.html">tem.library.Library</a></li><li><a href="tem.model.ActionDescription.html">tem.model.ActionDescription</a></li><li><a href="tem.model.ActionParameter.html">tem.model.ActionParameter</a></li><li><a href="tem.model.ActionSecureParameter.html">tem.model.ActionSecureParameter</a></li><li><a href="tem.model.ActionSettings.html">tem.model.ActionSettings</a></li><li><a href="tem.model.ActionTargetAllComputers.html">tem.model.ActionTargetAllComputers</a></li><li><a href="tem.model.ActionTargetByComputerID.html">tem.model.ActionTargetByComputerID</a></li><li><a href="tem.model.ActionTargetByComputerName.html">tem.model.ActionTargetByComputerName</a></li><li><a href="tem.model.ActionTargetByCustomRelevance.html">tem.model.ActionTargetByCustomRelevance</a></li><li><a href="tem.model.Analysis.html">tem.model.Analysis</a></li><li><a href="tem.model.AnalysisProperty.html">tem.model.AnalysisProperty</a></li><li><a href="tem.model.BaseAction.html">tem.model.BaseAction</a></li><li><a href="tem.model.BaseActionSuccessCriteria.html">tem.model.BaseActionSuccessCriteria</a></li><li><a href="tem.model.BaseActionTarget.html">tem.model.BaseActionTarget</a></li><li><a href="tem.model.BaseComputerGroupSearch.html">tem.model.BaseComputerGroupSearch</a></li><li><a href="tem.model.BaseFixlet.html">tem.model.BaseFixlet</a></li><li><a href="tem.model.Baseline.html">tem.model.Baseline</a></li><li><a href="tem.model.BaselineComponent.html">tem.model.BaselineComponent</a></li><li><a href="tem.model.BaselineComponentCollection.html">tem.model.BaselineComponentCollection</a></li><li><a href="tem.model.BaselineComponentGroup.html">tem.model.BaselineComponentGroup</a></li><li><a href="tem.model.ComputerGroup.html">tem.model.ComputerGroup</a></li><li><a href="tem.model.CustomRelevance.html">tem.model.CustomRelevance</a></li><li><a href="tem.model.DefaultAction.html">tem.model.DefaultAction</a></li><li><a href="tem.model.Fixlet.html">tem.model.Fixlet</a></li><li><a href="tem.model.FixletAction.html">tem.model.FixletAction</a></li><li><a href="tem.model.FixletWithActions.html">tem.model.FixletWithActions</a></li><li><a href="tem.model.MemberAction.html">tem.model.MemberAction</a></li><li><a href="tem.model.MIMEField.html">tem.model.MIMEField</a></li><li><a href="tem.model.MultipleActionGroup.html">tem.model.MultipleActionGroup</a></li><li><a href="tem.model.MultipleItems.html">tem.model.MultipleItems</a></li><li><a href="tem.model.OriginalRelevance.html">tem.model.OriginalRelevance</a></li><li><a href="tem.model.RunToCompletion.html">tem.model.RunToCompletion</a></li><li><a href="tem.model.SearchComponentGroupReference.html">tem.model.SearchComponentGroupReference</a></li><li><a href="tem.model.SearchComponentPropertyReference.html">tem.model.SearchComponentPropertyReference</a></li><li><a href="tem.model.SearchComponentRelevance.html">tem.model.SearchComponentRelevance</a></li><li><a href="tem.model.SingleAction.html">tem.model.SingleAction</a></li><li><a href="tem.model.SiteIdentifier.html">tem.model.SiteIdentifier</a></li><li><a href="tem.model.Task.html">tem.model.Task</a></li><li><a href="tem.model.WizardSource.html">tem.model.WizardSource</a></li><li><a href="tem.model.XMLSerializableObject.html">tem.model.XMLSerializableObject</a></li><li><a href="tem.model.XMLWrapper.html">tem.model.XMLWrapper</a></li><li><a href="tem.relevance.RelevanceData.html">tem.relevance.RelevanceData</a></li><li><a href="tem.shell.ShellWrapper.html">tem.shell.ShellWrapper</a></li><li><a href="tem.shell.SimpleExec.html">tem.shell.SimpleExec</a></li><li><a href="temui.analysisWarning.html">temui.analysisWarning</a></li><li><a href="temui.chartContainer.html">temui.chartContainer</a></li><li><a href="temui.dataGrid.html">temui.dataGrid</a></li><li><a href="temui.filterInput.html">temui.filterInput</a></li><li><a href="temui.gridContainer.html">temui.gridContainer</a></li><li><a href="temui.message.html">temui.message</a></li><li><a href="temui.popupMessage.html">temui.popupMessage</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3</a> on Mon Mar 18 2013 23:01:13 GMT+0800 (SGT)
+</footer>
+
+<script> sh_highlightDocument(); </script>
+</body>
+</html>

@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Namespace: scratchPad</title>
+    
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+    
+    <h1 class="page-title">Namespace: scratchPad</h1>
+    
+    
+
+
+
+<section>
+    
+<header>
+    <h2>
+        <span class="ancestors"><a href="tem.html">tem</a><a href="tem.file.html">.file</a>.</span>
+    
+    scratchPad
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+            <div class="description"><b>It's recommended that you use <a href="tem.file.FileSystem.html">tem.file.FileSystem</a> (where ActiveX use is available) rather than scratchPad functions</b>for working with the file system as it's not restricted to the Console's temporary "scratchpad" area.</div>
+        
+        
+        
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ADFAPI.js.html">API/ADFAPI.js</a>, <a href="ADFAPI.js.html#line1368">line 1368</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+        
+        
+    
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        <h3 class="subsection-title">Methods</h3>
+        
+        <dl>
+            
+<dt>
+    <h4 class="name" id="copyFile"><span class="type-signature">&lt;static> </span>copyFile<span class="signature">(inputPath, scratchPath, allowOverwriteFlag)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <b>Not available in Web Reports</b> Copies a file from the file system into a sub-path in the Console's temporary "scratchpad" area of the file system.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>inputPath</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>scratchPath</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>allowOverwriteFlag</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">If false, then an error will be returned if the file already exists.</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ADFAPI.js.html">API/ADFAPI.js</a>, <a href="ADFAPI.js.html#line1387">line 1387</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="copyFolder"><span class="type-signature">&lt;static> </span>copyFolder<span class="signature">(inputPath, scratchPath, recurseFlag)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <b>Not available in Web Reports</b> Copy all of the files contained in the folder specified by the inputPath to the sub-folder of the ScratchRoot folder specified by scratchPath. The destination folder must exist already. If the recurseFlag is true then all of the sub-folders will be copied as well as the files, and new destination sub-folders will be created. If a source file or sub-folder already exists in the destination folder, it will cause an error.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>inputPath</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>scratchPath</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">If true then all of the sub-folders will be copied as well as the files, and new destination sub-folders will be created.</td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>recurseFlag</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ADFAPI.js.html">API/ADFAPI.js</a>, <a href="ADFAPI.js.html#line1403">line 1403</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="deleteAllFiles"><span class="type-signature">&lt;static> </span>deleteAllFiles<span class="signature">(scratchPath, recurseFlag)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <b>Not available in Web Reports</b> Delete all the files in the folder located at the given sub-path of the ScratchRoot folder. If recurseFlag is true, then all the files in all of the sub-directories will also be deleted. Note that this function does not delete any folders.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>scratchPath</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>recurseFlag</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">If recurseFlag is true, then all the files in all of the sub-directories will also be deleted.</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ADFAPI.js.html">API/ADFAPI.js</a>, <a href="ADFAPI.js.html#line1416">line 1416</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="deleteFile"><span class="type-signature">&lt;static> </span>deleteFile<span class="signature">(scratchPath)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <b>Not available in Web Reports</b> Delete the file located at the given sub-path of the ScratchRoot folder.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>scratchPath</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ADFAPI.js.html">API/ADFAPI.js</a>, <a href="ADFAPI.js.html#line1425">line 1425</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="deleteFolder"><span class="type-signature">&lt;static> </span>deleteFolder<span class="signature">(scratchPath)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <b>Not available in Web Reports</b> Delete all the files in the folder located at the given sub-path of the ScratchRoot folder. If recurseFlag is true, then all the files in all of the sub-directories will also be deleted. Note that this function does not delete any folders.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>scratchPath</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ADFAPI.js.html">API/ADFAPI.js</a>, <a href="ADFAPI.js.html#line1436">line 1436</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="deleteTree"><span class="type-signature">&lt;static> </span>deleteTree<span class="signature">(scratchPath)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <b>Not available in Web Reports</b> Delete the folder located at the given sub-path of the ScratchRoot folder and all of its contents.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>scratchPath</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ADFAPI.js.html">API/ADFAPI.js</a>, <a href="ADFAPI.js.html#line1446">line 1446</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="getScratchRootPath"><span class="type-signature">&lt;static> </span>getScratchRootPath<span class="signature">()</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <b>Not available in Web Reports</b> This function returns the path to the temporary folder where all "scratch" files are created. In the functions below, some of the inputs are a full path, and some are a a sub-path of the ScrathRoot folder. If you need to use a ScratchRoot sub-path as the input to one of the functions that requires a full path, then you need to prepend the results of this function to the sub-path.
+    </div>
+    
+
+    
+    
+    
+    
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ADFAPI.js.html">API/ADFAPI.js</a>, <a href="ADFAPI.js.html#line1493">line 1493</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="makeFolder"><span class="type-signature">&lt;static> </span>makeFolder<span class="signature">(scratchPath)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <b>Not available in Web Reports</b> Create a folder at the given sub-path of the ScratchRoot folder.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>scratchPath</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ADFAPI.js.html">API/ADFAPI.js</a>, <a href="ADFAPI.js.html#line1455">line 1455</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="moveFile"><span class="type-signature">&lt;static> </span>moveFile<span class="signature">(scratchPathSrc, scratchPathDest, allowOverwriteFlag)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <b>Not available in Web Reports</b> Move a file from one location under the ScratchRoot folder to another. You cannot move files that are located outside the scratch area.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>scratchPathSrc</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>scratchPathDest</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>allowOverwriteFlag</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ADFAPI.js.html">API/ADFAPI.js</a>, <a href="ADFAPI.js.html#line1467">line 1467</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        
+            
+<dt>
+    <h4 class="name" id="writeFile"><span class="type-signature">&lt;static> </span>writeFile<span class="signature">(text, scratchPath, appendFlag)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <b>Not available in Web Reports</b> Writes the given string into the file located at the given sub-path of the ScratchRoot folder. If the appendFlag is false, then the file will be created if it does not exist, and will be over-written if it does exist. If the appendFlag is true, then the file must exist, and the text will be appended to the contents of the existing file.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>text</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>scratchPath</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>appendFlag</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ADFAPI.js.html">API/ADFAPI.js</a>, <a href="ADFAPI.js.html#line1481">line 1481</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+        </dl>
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Classes</h3><ul><li><a href="tem.library.JavaScriptLibrary.html">JavaScriptLibrary</a></li><li><a href="tem.library.Library.html">Library</a></li><li><a href="tem.model.ActionDescription.html">ActionDescription</a></li><li><a href="tem.model.ActionParameter.html">ActionParameter</a></li><li><a href="tem.model.ActionSecureParameter.html">ActionSecureParameter</a></li><li><a href="tem.model.ActionSettings.html">ActionSettings</a></li><li><a href="tem.model.ActionTargetAllComputers.html">ActionTargetAllComputers</a></li><li><a href="tem.model.ActionTargetByComputerID.html">ActionTargetByComputerID</a></li><li><a href="tem.model.ActionTargetByComputerName.html">ActionTargetByComputerName</a></li><li><a href="tem.model.ActionTargetByCustomRelevance.html">ActionTargetByCustomRelevance</a></li><li><a href="tem.model.Analysis.html">Analysis</a></li><li><a href="tem.model.AnalysisProperty.html">AnalysisProperty</a></li><li><a href="tem.model.BaseAction.html">BaseAction</a></li><li><a href="tem.model.BaseActionSuccessCriteria.html">BaseActionSuccessCriteria</a></li><li><a href="tem.model.BaseActionTarget.html">BaseActionTarget</a></li><li><a href="tem.model.BaseComputerGroupSearch.html">BaseComputerGroupSearch</a></li><li><a href="tem.model.BaseFixlet.html">BaseFixlet</a></li><li><a href="tem.model.Baseline.html">Baseline</a></li><li><a href="tem.model.BaselineComponent.html">BaselineComponent</a></li><li><a href="tem.model.BaselineComponentCollection.html">BaselineComponentCollection</a></li><li><a href="tem.model.BaselineComponentGroup.html">BaselineComponentGroup</a></li><li><a href="tem.model.ComputerGroup.html">ComputerGroup</a></li><li><a href="tem.model.CustomRelevance.html">CustomRelevance</a></li><li><a href="tem.model.DefaultAction.html">DefaultAction</a></li><li><a href="tem.model.Fixlet.html">Fixlet</a></li><li><a href="tem.model.FixletAction.html">FixletAction</a></li><li><a href="tem.model.FixletWithActions.html">FixletWithActions</a></li><li><a href="tem.model.MemberAction.html">MemberAction</a></li><li><a href="tem.model.MIMEField.html">MIMEField</a></li><li><a href="tem.model.MultipleActionGroup.html">MultipleActionGroup</a></li><li><a href="tem.model.MultipleItems.html">MultipleItems</a></li><li><a href="tem.model.OriginalRelevance.html">OriginalRelevance</a></li><li><a href="tem.model.RunToCompletion.html">RunToCompletion</a></li><li><a href="tem.model.SearchComponentGroupReference.html">SearchComponentGroupReference</a></li><li><a href="tem.model.SearchComponentPropertyReference.html">SearchComponentPropertyReference</a></li><li><a href="tem.model.SearchComponentRelevance.html">SearchComponentRelevance</a></li><li><a href="tem.model.SingleAction.html">SingleAction</a></li><li><a href="tem.model.SiteIdentifier.html">SiteIdentifier</a></li><li><a href="tem.model.Task.html">Task</a></li><li><a href="tem.model.WizardSource.html">WizardSource</a></li><li><a href="tem.model.XMLSerializableObject.html">XMLSerializableObject</a></li><li><a href="tem.model.XMLWrapper.html">XMLWrapper</a></li><li><a href="tem.relevance.RelevanceData.html">RelevanceData</a></li><li><a href="tem.shell.ShellWrapper.html">ShellWrapper</a></li><li><a href="tem.shell.SimpleExec.html">SimpleExec</a></li><li><a href="temui.analysisWarning.html">analysisWarning</a></li><li><a href="temui.chartContainer.html">chartContainer</a></li><li><a href="temui.dataGrid.html">dataGrid</a></li><li><a href="temui.filterInput.html">filterInput</a></li><li><a href="temui.gridContainer.html">gridContainer</a></li><li><a href="temui.healthCheck.html">healthCheck</a></li><li><a href="temui.healthCheckGroup.html">healthCheckGroup</a></li><li><a href="temui.message.html">message</a></li><li><a href="temui.popupMessage.html">popupMessage</a></li></ul><h3>Events</h3><ul><li><a href="temui.analysisWarning.html#event:activate">activate</a></li><li><a href="temui.analysisWarning.html#event:activated">activated</a></li><li><a href="temui.filterInput.html#event:applied">applied</a></li><li><a href="temui.healthCheck.html#event:statuschanged">statuschanged</a></li><li><a href="temui.healthCheck.html#event:refresh">refresh</a></li><li><a href="temui.message.html#event:close">close</a></li><li><a href="temui.message.html#event:closed">closed</a></li></ul><h3>Namespaces</h3><ul><li><a href="$.fn.html">fn</a></li><li><a href="tem.html">tem</a></li><li><a href="tem.config.html">config</a></li><li><a href="tem.consoleUtils.html">consoleUtils</a></li><li><a href="tem.content.html">content</a></li><li><a href="tem.context.html">context</a></li><li><a href="tem.dataStore.html">dataStore</a></li><li><a href="tem.file.html">file</a></li><li><a href="tem.file.FileSystem.html">FileSystem</a></li><li><a href="tem.file.scratchPad.html">scratchPad</a></li><li><a href="tem.file.upload.html">upload</a></li><li><a href="tem.javascriptUtils.html">javascriptUtils</a></li><li><a href="tem.l10n.html">l10n</a></li><li><a href="tem.library.html">library</a></li><li><a href="tem.logging.html">logging</a></li><li><a href="tem.model.html">model</a></li><li><a href="tem.relevance.html">relevance</a></li><li><a href="tem.relevance.queries.html">queries</a></li><li><a href="tem.relevance.queries.computers.html">computers</a></li><li><a href="tem.shell.html">shell</a></li><li><a href="temui.html">temui</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.0</a> on Mon Dec 02 2013 17:41:23 GMT+0800 (SGT)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

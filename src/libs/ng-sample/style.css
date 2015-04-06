@@ -1,0 +1,77 @@
+.alert .ui-dialog-titlebar {
+	display:none !important;
+}
+
+.dashboard-config-container {
+	position:absolute;
+	right:0px;
+	top:0px;
+	border-style:solid;
+	border-width: 1px;
+	border-color: #cccccc;
+	background-color:#eeeeee;
+	z-index:2000;
+}
+
+#barChart table.jqplot-table-legend {
+	left: 50px !important;
+	bottom: -5px !important;
+}
+
+#barChart .barChartTick {
+	display: block;
+	max-width: 200px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	*width: 200px;
+	*white-space:nowrap;
+	*height: 1.5em;
+}
+
+.slick-columnpicker {
+	width: 250px;
+}
+
+#validationForm {
+	width: 300px;
+}
+
+#validationForm #formContent {
+	padding:20px;
+}
+
+#validationForm legend {
+	margin-left:20px;
+	font-weight:bold;
+}
+
+#validationForm input[type="text"] {
+	margin:5px 0px 10px 10px;
+	padding:3px;
+	width: 200px;
+}
+
+#validationForm input[type="submit"] {
+	margin-top:10px;
+}
+
+#validationForm .temui-validation-error-container {
+	margin-left:10px;
+	margin-top:3px;
+}
+
+#validationForm label.temui-validation-error{
+	width:150px;
+}
+
+.temui-print-media .tab-titles {
+	display: none;
+}
+
+.temui-print-media #tabs {
+	border: none;
+}
+
+.temui-print-media #tabs-chart, .temui-print-media #tabs-grid {
+	width: 1000px;
+}

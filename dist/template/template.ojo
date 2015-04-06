@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<BES>
+  <Wizard>
+    <Title>Template- ADF 2.2.1</Title>
+    <UIHooks LaunchType="Document" RequiresAuthoring="false" Menu="Dashboards"></UIHooks>
+    <DefaultPage>Page1</DefaultPage>
+   	<Page Name="Page1" DocType="HTML 4.01 Transitional" > 
+   <Title>Page1 Title</Title>
+      <HTML>
+		<![CDATA[
+
+		<!--[if lt IE 9]><script src="template/libs/jquery.jqplot.1.0.0b2_r1012/excanvas.js"></script><![endif]-->
+
+		<link rel="stylesheet" type="text/css" href="template/libs/yui-css-grids-3.4.1/grids-min.css">		
+
+		<link rel="stylesheet" type="text/css" href="template/libs/jquery.jqplot.1.0.0b2_r1012/jquery.jqplot.css" />
+		<link rel="stylesheet" type="text/css" href="template/styles/jquery-ui/css/custom-theme/jquery-ui-1.8.18.custom.css" /> 
+		<link rel="stylesheet" type="text/css" href="template/libs/SlickGrid-2.0b1-0-gfee9ad2/slick.grid.css" />
+		<link rel="stylesheet" type="text/css" href="template/libs/SlickGrid-2.0b1-0-gfee9ad2/slick-default-theme.css" />
+		
+		<link rel="stylesheet" type="text/css" href="ADF/jQuery/ADFUI.css" />
+	
+
+		<SCRIPT src="resources.js"></SCRIPT>
+		
+		<SCRIPT src="template/libs/jquery-1.7.1/jquery-1.7.min.js"></SCRIPT>
+		<SCRIPT src="template/libs/jquery-ui-1.8.17/jquery-ui-1.8.17.js"></SCRIPT>
+
+		<script src="template/libs/SlickGrid-2.0b1-0-gfee9ad2/lib/jquery.event.drag-2.0.min.js"></script>
+		<script src="template/libs/SlickGrid-2.0b1-0-gfee9ad2/slick.core.js"></script>
+		<script src="template/libs/SlickGrid-2.0b1-0-gfee9ad2/slick.grid.js"></script>
+		<script src="template/libs/SlickGrid-2.0b1-0-gfee9ad2/slick.dataview.js"></script>
+
+		<script src="template/libs/jquery.jqplot.1.0.0b2_r1012/jquery.jqplot.js"></script>
+
+
+		<SCRIPT src="ADF/API/AdfApi.js"></SCRIPT>
+		<SCRIPT src="ADF/jQuery/ADFUI.js"></SCRIPT>
+
+		
+		<div data-tem-role="topNav">
+			<button data-tem-role="refreshButton"></button>
+		</div>
+				
+						
+		<div data-tem-role="header">
+			<?hxlat ADF 2.2.1- Template?>
+			<div id="lastUpdate" data-tem-role="lastUpdate"></div>	
+		</div>
+
+
+		]]>
+	   </HTML>
+	 </Page>
+   </Wizard>
+</BES>

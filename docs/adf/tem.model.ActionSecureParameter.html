@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Class: ActionSecureParameter</title>
+    
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+    
+    <h1 class="page-title">Class: ActionSecureParameter</h1>
+    
+    
+
+
+
+<section>
+    
+<header>
+    <h2>
+        <span class="ancestors"><a href="tem.html">tem</a><a href="tem.model.html">.model</a>.</span>
+    
+    ActionSecureParameter
+    </h2>
+    
+</header>  
+
+<article>
+    <div class="container-overview">
+    
+    
+    
+        
+<dt>
+    <h4 class="name" id="ActionSecureParameter"><span class="type-signature"></span>new ActionSecureParameter<span class="signature">(name, value)</span><span class="type-signature"></span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        <strong>Added in 9.0 (Gilman)</strong>Model for Action SecureParameter. When SecureParameter is used, action must be targeted at a set of computers by ID or by Name.Bad Request error can be thrown when invalid Computer ID or Name is used to target computers.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+        <h5 class="subsection-title">Properties:</h5>
+        
+        <dl>
+
+<table class="props">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>Name</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	
+        <tr>
+            
+                <td class="name"><code>textValue</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last"></td>
+        </tr>
+	
+	
+	</tbody>
+</table></dl>
+        
+    
+        
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ADFAPI.js.html">API/ADFAPI.js</a>, <a href="ADFAPI.js.html#line3463">line 3463</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    <dt class="tag-see">See:</dt>
+    <dd class="tag-see">
+        <ul>
+            <li><a href="tem.model.ActionTargetByComputerID.html">tem.model.ActionTargetByComputerID</a></li>
+        
+            <li><a href="tem.model.ActionTargetByComputerName.html">tem.model.ActionTargetByComputerName</a></li>
+        </ul>
+    </dd>
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+</dd>
+
+    
+    </div>
+    
+    
+        <h3 class="subsection-title">Extends</h3>
+        
+        <ul>
+            <li><a href="tem.model.ActionParameter.html">tem.model.ActionParameter</a></li>
+        </ul>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        <h3 class="subsection-title">Methods</h3>
+        
+        <dl>
+            
+<dt>
+    <h4 class="name" id="toXML"><span class="type-signature"></span>toXML<span class="signature">(skipUI)</span><span class="type-signature"> &rarr; {DOMDocument}</span></h4>
+    
+    
+</dt>
+<dd>
+    
+    
+    <div class="description">
+        This method creates an XML "snapshot" of the current state of the content model object.Typically this XML would be used as part of the content creation process as the consolehooks use an XML representation of a content object to create content.
+    </div>
+    
+
+    
+    
+    
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+		
+		<th>Type</th>
+		
+		
+		
+		
+		
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	
+	
+        <tr>
+            
+                <td class="name"><code>skipUI</code></td>
+            
+            
+            <td class="type">
+            
+                
+<span class="param-type">Boolean</span>
+
+
+            
+            </td>
+            
+            
+            
+            
+            
+            <td class="description last">If set to true the console window asking for user confirmation oncontent creation will be suppressed.</td>
+        </tr>
+	
+	
+	</tbody>
+</table>
+    
+    
+    
+<dl class="details">
+    
+        
+    
+    
+    
+
+    
+    <dt class="inherited-from">Inherited From:</dt>
+    <dd class="inherited-from"><ul class="dummy"><li>
+        <a href="tem.model.ActionParameter.html#toXML">tem.model.ActionParameter#toXML</a>
+    </li></dd>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="ADFAPI.js.html">API/ADFAPI.js</a>, <a href="ADFAPI.js.html#line2954">line 2954</a>
+    </li></ul></dd>
+    
+    
+    
+    
+    
+    
+    
+</dl>
+
+    
+    
+
+    
+
+    
+    
+    
+    
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+	<dt>
+		Type
+	</dt>
+	<dd>
+		
+<span class="param-type">DOMDocument</span>
+
+
+	</dd>
+</dl>
+
+        
+    
+    
+</dd>
+
+        </dl>
+    
+    
+    
+    
+    
+</article>
+
+</section>  
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Index</a></h2><h3>Classes</h3><ul><li><a href="tem.library.JavaScriptLibrary.html">JavaScriptLibrary</a></li><li><a href="tem.library.Library.html">Library</a></li><li><a href="tem.model.ActionDescription.html">ActionDescription</a></li><li><a href="tem.model.ActionParameter.html">ActionParameter</a></li><li><a href="tem.model.ActionSecureParameter.html">ActionSecureParameter</a></li><li><a href="tem.model.ActionSettings.html">ActionSettings</a></li><li><a href="tem.model.ActionTargetAllComputers.html">ActionTargetAllComputers</a></li><li><a href="tem.model.ActionTargetByComputerID.html">ActionTargetByComputerID</a></li><li><a href="tem.model.ActionTargetByComputerName.html">ActionTargetByComputerName</a></li><li><a href="tem.model.ActionTargetByCustomRelevance.html">ActionTargetByCustomRelevance</a></li><li><a href="tem.model.Analysis.html">Analysis</a></li><li><a href="tem.model.AnalysisProperty.html">AnalysisProperty</a></li><li><a href="tem.model.BaseAction.html">BaseAction</a></li><li><a href="tem.model.BaseActionSuccessCriteria.html">BaseActionSuccessCriteria</a></li><li><a href="tem.model.BaseActionTarget.html">BaseActionTarget</a></li><li><a href="tem.model.BaseComputerGroupSearch.html">BaseComputerGroupSearch</a></li><li><a href="tem.model.BaseFixlet.html">BaseFixlet</a></li><li><a href="tem.model.Baseline.html">Baseline</a></li><li><a href="tem.model.BaselineComponent.html">BaselineComponent</a></li><li><a href="tem.model.BaselineComponentCollection.html">BaselineComponentCollection</a></li><li><a href="tem.model.BaselineComponentGroup.html">BaselineComponentGroup</a></li><li><a href="tem.model.ComputerGroup.html">ComputerGroup</a></li><li><a href="tem.model.CustomRelevance.html">CustomRelevance</a></li><li><a href="tem.model.DefaultAction.html">DefaultAction</a></li><li><a href="tem.model.Fixlet.html">Fixlet</a></li><li><a href="tem.model.FixletAction.html">FixletAction</a></li><li><a href="tem.model.FixletWithActions.html">FixletWithActions</a></li><li><a href="tem.model.MemberAction.html">MemberAction</a></li><li><a href="tem.model.MIMEField.html">MIMEField</a></li><li><a href="tem.model.MultipleActionGroup.html">MultipleActionGroup</a></li><li><a href="tem.model.MultipleItems.html">MultipleItems</a></li><li><a href="tem.model.OriginalRelevance.html">OriginalRelevance</a></li><li><a href="tem.model.RunToCompletion.html">RunToCompletion</a></li><li><a href="tem.model.SearchComponentGroupReference.html">SearchComponentGroupReference</a></li><li><a href="tem.model.SearchComponentPropertyReference.html">SearchComponentPropertyReference</a></li><li><a href="tem.model.SearchComponentRelevance.html">SearchComponentRelevance</a></li><li><a href="tem.model.SingleAction.html">SingleAction</a></li><li><a href="tem.model.SiteIdentifier.html">SiteIdentifier</a></li><li><a href="tem.model.Task.html">Task</a></li><li><a href="tem.model.WizardSource.html">WizardSource</a></li><li><a href="tem.model.XMLSerializableObject.html">XMLSerializableObject</a></li><li><a href="tem.model.XMLWrapper.html">XMLWrapper</a></li><li><a href="tem.relevance.RelevanceData.html">RelevanceData</a></li><li><a href="tem.shell.ShellWrapper.html">ShellWrapper</a></li><li><a href="tem.shell.SimpleExec.html">SimpleExec</a></li><li><a href="temui.analysisWarning.html">analysisWarning</a></li><li><a href="temui.chartContainer.html">chartContainer</a></li><li><a href="temui.dataGrid.html">dataGrid</a></li><li><a href="temui.filterInput.html">filterInput</a></li><li><a href="temui.gridContainer.html">gridContainer</a></li><li><a href="temui.healthCheck.html">healthCheck</a></li><li><a href="temui.healthCheckGroup.html">healthCheckGroup</a></li><li><a href="temui.message.html">message</a></li><li><a href="temui.popupMessage.html">popupMessage</a></li></ul><h3>Events</h3><ul><li><a href="temui.analysisWarning.html#event:activate">activate</a></li><li><a href="temui.analysisWarning.html#event:activated">activated</a></li><li><a href="temui.filterInput.html#event:applied">applied</a></li><li><a href="temui.healthCheck.html#event:statuschanged">statuschanged</a></li><li><a href="temui.healthCheck.html#event:refresh">refresh</a></li><li><a href="temui.message.html#event:close">close</a></li><li><a href="temui.message.html#event:closed">closed</a></li></ul><h3>Namespaces</h3><ul><li><a href="$.fn.html">fn</a></li><li><a href="tem.html">tem</a></li><li><a href="tem.config.html">config</a></li><li><a href="tem.consoleUtils.html">consoleUtils</a></li><li><a href="tem.content.html">content</a></li><li><a href="tem.context.html">context</a></li><li><a href="tem.dataStore.html">dataStore</a></li><li><a href="tem.file.html">file</a></li><li><a href="tem.file.FileSystem.html">FileSystem</a></li><li><a href="tem.file.scratchPad.html">scratchPad</a></li><li><a href="tem.file.upload.html">upload</a></li><li><a href="tem.javascriptUtils.html">javascriptUtils</a></li><li><a href="tem.l10n.html">l10n</a></li><li><a href="tem.library.html">library</a></li><li><a href="tem.logging.html">logging</a></li><li><a href="tem.model.html">model</a></li><li><a href="tem.relevance.html">relevance</a></li><li><a href="tem.relevance.queries.html">queries</a></li><li><a href="tem.relevance.queries.computers.html">computers</a></li><li><a href="tem.shell.html">shell</a></li><li><a href="temui.html">temui</a></li></ul>
+</nav>
+
+<br clear="both">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.0</a> on Mon Dec 02 2013 17:41:24 GMT+0800 (SGT)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

@@ -1,0 +1,780 @@
+<?xml version="1.0"?>
+<BES>
+  <Wizard>
+    <Title>Sample- ADF 2.2.1</Title>
+    <UIHooks LaunchType="Document" RequiresAuthoring="false" Menu="Dashboards"></UIHooks>
+    <DefaultPage>Page1</DefaultPage>
+   <Page Name="Page1" DocType="HTML 4.01 Transitional" > 
+   <Title>Page1 Title</Title>
+      <HTML>
+		<![CDATA[
+
+		<!--[if lt IE 9]><script src="sample/libs/jquery.jqplot.1.0.0b2_r1012/excanvas.js"></script><![endif]-->
+
+		<link rel="stylesheet" type="text/css" href="sample/libs/yui-css-grids-3.4.1/grids-min.css">		
+
+		<link rel="stylesheet" type="text/css" href="sample/libs/jquery.jqplot.1.0.0b2_r1012/jquery.jqplot.css" />
+		<link rel="stylesheet" type="text/css" href="sample/styles/jquery-ui/css/custom-theme/jquery-ui-1.8.18.custom.css" /> 
+		<link rel="stylesheet" type="text/css" href="sample/libs/SlickGrid-2.0b1-0-gfee9ad2/slick.grid.css" />
+		<link rel="stylesheet" type="text/css" href="sample/libs/SlickGrid-2.0b1-0-gfee9ad2/controls/slick.pager.css" />
+		<link rel="stylesheet" type="text/css" href="sample/libs/SlickGrid-2.0b1-0-gfee9ad2/controls/slick.columnpicker.css" />
+		<link rel="stylesheet" type="text/css" href="sample/libs/SlickGrid-2.0b1-0-gfee9ad2/slick-default-theme.css" />
+		
+		<link rel="stylesheet" type="text/css" href="ADF/jQuery/ADFUI.css" />
+		
+		<style type="text/css">		
+		
+			#dialog-modal, *[data-tem-role='topNav'], *[data-tem-role='header'], #tabs {
+				display:none;
+			}
+
+			.alert .ui-dialog-titlebar {
+	    		display:none !important;
+			}
+
+			.dashboard-config-container {
+				position:absolute;
+				right:0px;
+				top:0px;
+				border-style:solid;
+				border-width: 1px;
+				border-color: #cccccc;
+				background-color:#eeeeee;
+				z-index:2000;
+			}
+
+
+			#barChart table.jqplot-table-legend {
+				left: 50px !important;
+				bottom: -5px !important;
+			}
+			
+			#barChart .jqplot-yaxis {
+				width:230px !important;
+			}
+
+			#barChart .jqplot-yaxis-tick {
+				white-space:normal !important;
+			}
+
+			.slick-columnpicker {
+				width: 250px;
+			}
+
+		</style>
+
+		<SCRIPT src="resources.js"></SCRIPT>
+		
+		<SCRIPT src="sample/libs/jquery-1.7.1/jquery-1.7.min.js"></SCRIPT>
+		<SCRIPT src="sample/libs/jquery-ui-1.8.17/jquery-ui-1.8.17.js"></SCRIPT>
+
+		<script src="sample/libs/SlickGrid-2.0b1-0-gfee9ad2/lib/jquery.event.drag-2.0.min.js"></script>
+		<script src="sample/libs/SlickGrid-2.0b1-0-gfee9ad2/slick.core.js"></script>
+		<script src="sample/libs/SlickGrid-2.0b1-0-gfee9ad2/plugins/slick.checkboxselectcolumn.js"></script>
+		<script src="sample/libs/SlickGrid-2.0b1-0-gfee9ad2/plugins/slick.rowselectionmodel.js"></script>
+		<script src="sample/libs/SlickGrid-2.0b1-0-gfee9ad2/controls/slick.pager.js"></script>
+		<script src="sample/libs/SlickGrid-2.0b1-0-gfee9ad2/controls/slick.columnpicker.js"></script>
+		<script src="sample/libs/SlickGrid-2.0b1-0-gfee9ad2/slick.grid.js"></script>
+		<script src="sample/libs/SlickGrid-2.0b1-0-gfee9ad2/slick.dataview.js"></script>
+
+		<script src="sample/libs/jquery.jqplot.1.0.0b2_r1012/jquery.jqplot.js"></script>
+		<script src="sample/libs/jquery.jqplot.1.0.0b2_r1012/plugins/jqplot.barRenderer.js"></script>
+		<script src="sample/libs/jquery.jqplot.1.0.0b2_r1012/plugins/jqplot.pieRenderer.js"></script>
+		<script src="sample/libs/jquery.jqplot.1.0.0b2_r1012/plugins/jqplot.categoryAxisRenderer.js"></script>
+		<script src="sample/libs/jquery.jqplot.1.0.0b2_r1012/plugins/jqplot.highlighter.js"></script>
+		<script src="sample/libs/jquery.jqplot.1.0.0b2_r1012/plugins/jqplot.canvasTextRenderer.js"></script>
+		<script src="sample/libs/jquery.jqplot.1.0.0b2_r1012/plugins/jqplot.canvasAxisLabelRenderer.js"></script>
+
+
+		<SCRIPT src="ADF/API/AdfApi.js"></SCRIPT>
+		<SCRIPT src="ADF/jQuery/ADFUI.js"></SCRIPT>
+
+		<script>
+		
+			function getTestAction(){
+				var testAction = new tem.model.SingleAction("<?jxlat Test Action?>", "test relevance", "// do nothing");
+				var testActionSettings = new tem.model.ActionSettings();
+				testActionSettings.HasMessage = true;
+				testActionSettings.ActionUITitle = "actionUI";
+				testAction.Settings = testActionSettings;
+				return testAction;				
+			}
+		
+			function createAction(){
+				tem.content.createContent(getTestAction(), false, false);
+			}
+
+			function createActionNoUI(){
+				tem.content.createContent(getTestAction(), true, false);
+			}
+				
+			function createActionNoDoc(){
+				tem.content.createContent(getTestAction(), false, true);
+			}
+
+			function createAnalysis(){
+				var testAnalysis = new tem.model.Analysis();
+				testAnalysis.Title = "<?jxlat Test Analysis?>";
+				testAnalysis.Description = "<?jxlat Test Description?>";
+				testAnalysis.Relevance = "Test Relevance";
+				
+				var prop = new tem.model.AnalysisProperty(3,"rrr", "now");
+				prop.EvaluationPeriod = "PT0S"
+				testAnalysis.Property = prop;
+				
+				tem.content.createContent(testAnalysis, false, false);				
+			}	
+					
+			function openComputers(){
+				tem.evalRel('ids of bes computers', {
+					success: openComputersCallback
+				});
+			}
+			
+			function openComputersCallback(computerIds) {	
+				tem.content.openComputerGroup(computerIds, "<?jxlat Sample Ad Hoc Computer Group?>");
+			}
+			
+ 			var colPlot2;		
+ 			var colPlot1;		
+ 			var barPlot;		
+ 			var piePlot;		
+				
+			var dataView;
+			var relData;			
+			var data;		
+
+			var grid;			
+
+			$(function(){
+
+				var $divConfigContainer;			
+		
+				$("#tabs-1 button").button();
+		
+				$("#bulkButton").click(function(e) {
+					var $actionLink1 = $('<div id="action1" class="ui-widget-content" style="padding:5px;"><?hxlat Action 1?></div>');
+					var $actionLink2 = $('<div class="ui-widget-content" style="padding:5px;"><?hxlat Action 2?></div>');
+	
+					$.each([$actionLink1, $actionLink2], function(key ,value){
+						value.hover(
+							function () {
+    							$(this).addClass("ui-state-hover");
+  							},
+  							function () {
+    							$(this).removeClass("ui-state-hover");
+  							}
+						);
+								
+						value.mouseup(
+							function () {
+								$(this).parent().hide();
+				  			}
+						);		
+					});
+	
+					$actionLink1.click(function(e) {
+						alert("action 1");
+					});
+
+					$actionLink2.click(function(e) {
+						alert("action2");
+					});
+	
+					var $menu = $('<div style="display:block; position:absolute; z-index:30;"></div>')
+						.append($actionLink1)
+						.append($actionLink2);
+					$(document.body).append($menu);
+
+					$menu.position({
+						my: "left top",
+						at: "left bottom",
+						of: this
+					});
+					
+
+					$(document.body).on('click.sample', function() {
+						$menu.remove();
+						$(document.body).off('click.sample');
+					});
+	
+					// dont trigger a document.body click event
+					e.stopPropagation();
+				});
+				
+				dataView = new Slick.Data.DataView();
+				
+				
+				var columns = [
+					{id:"name", name:"<?jxlat Name?>", field:GridFixlet.LINK, sortable: true, formatter:temui.grid.HTMLFormatter},
+					{id:"sourceSeverity", name:"<?jxlat Source Severity?>", field:GridFixlet.SOURCE_SEVERITY, sortable: true},
+					{id:"sourceReleaseDate", name:"<?jxlat Source Release Date?>", field:GridFixlet.SOURCE_RELEASE_DATE, sortable: true},
+					{id:"category", name:"<?jxlat Category?>", field:GridFixlet.CATEGORY, sortable: true},
+					{id:"percentCompliant", name:"<?jxlat % Compliance?>", field:GridFixlet.COMPLIANCE, sortable: true, formatter: percentageBarFormatter}
+				];
+
+				var checkboxSelector = new Slick.CheckboxSelectColumn({
+            		cssClass: "slick-cell-checkboxsel"
+        		});
+				columns.unshift(checkboxSelector.getColumnDefinition())
+
+				$("#expandablePanel").click(function() {
+					$("#expandableContent").toggle('blind', {}, 500);
+					$("#expandablePanel .ui-icon").toggle();
+				});
+
+				$("*[data-tem-role='refreshButton']").click(function() {
+					loadData();
+				});
+
+				$("#createAction").click(function() {
+					createAction();
+				});
+				
+				$("#createActionNoUI").click(function() {
+					createActionNoUI();
+				});
+				
+				$("#createActionNoDoc").click(function() {
+					createActionNoDoc();
+				});
+
+				$("#openComputerGroup").click(function() {
+					openComputers();
+				});
+
+
+				var generalInfo = [
+					["<?jxlat Version?>", tem.context.getVersion()],
+					["<?jxlat Running in Console?>", tem.context.isInConsole()],
+					["<?jxlat User Locale?>", tem.context.getUserLocale()],
+					["<?jxlat Preferred Language?>", tem.context.getPreferredLanguage()],
+					["<?jxlat Server URL?>", tem.context.getServerURL()],
+					["<?jxlat Current DSN?>", tem.context.getCurrentDSN()],
+					["<?jxlat Current User?>", tem.context.getCurrentUser()],
+					["<?jxlat Base Directory?>", tem.context.getBaseDirectory()],
+					["<?jxlat Window Height?>", tem.context.getWindowHeight()]
+				];
+
+
+				$.each(generalInfo, function(key, value) {
+					$("#contextInfo").append("<li>" + value[0] + ": "+ value[1] + "</li>");
+				})
+
+				$("<li></li>").append(tem.l10n.format('<?rxlat The time {0} is: {1} ?>', '"now"', 'now')).appendTo("#localizationExample");
+			
+				
+				// was hiding components until they were styled properly
+				// need to do before tabs() or charts won't retain width set via css in html		
+				$("*[data-tem-role='topNav'],*[data-tem-role='header'],#tabs").css("display", "block");
+				// force "reflow" of dom here
+				document.body.clientHeight;
+						
+				$("#tabs").tabs();
+				
+				grid = new temui.grid.DataGrid("#sampleGrid", dataView, columns, {enableCellNavigation: true});		
+				grid.setSelectionModel(new Slick.RowSelectionModel({selectActiveRow:false}));
+				grid.registerPlugin(checkboxSelector);	
+
+				grid.onSort.subscribe(function(e, args){
+					var sortCol = args.sortCol;
+					var sortAsc = args.sortAsc;
+
+					if($.inArray(sortCol.field, [GridFixlet.COMPLIANCE]) != -1) {
+						dataView.sort(function(a,b){return a[sortCol.field]-b[sortCol.field];},sortAsc);
+					} else {
+						
+						try {
+							dataView.fastSort(sortCol.field, sortAsc);
+						} catch(e) {
+							throw new Error("<?jxlat Error performing grid sort.?> " + e.message);
+						}
+					}
+				});
+				
+				$('#dataGridContainer').gridContainer({
+					grid:grid,
+					filterOptions:{
+						filterFunction:testFilter
+					}
+				});	
+				
+
+				var pager = new Slick.Controls.Pager(dataView, grid, $("#pager"));
+				var columnpicker = new Slick.Controls.ColumnPicker(columns, grid);
+
+				loadData();
+			});
+
+		
+
+		
+		
+			function onLoad(results){
+				$("#lastUpdate").html("" + new Date());
+				
+				// Can't directly use RelevanceResult custom JS type
+				// returned by relevance call, as SlickGrid expects 
+				// to be able to call concat on it, need to copy into 
+				// regular JS array.
+				data = [];
+			
+				for (var i = 0; i < results.currData.length; i++) {
+					var item = {};
+					
+					for (var j = 0; j< results.currData[i].length; j++) {
+						item[j] = results.currData[i][j];
+					}				
+					
+					// fake compliance data
+					item[GridFixlet.COMPLIANCE] = Math.floor(Math.random() * (101));
+					data.push(item);
+				}
+				createBarChart();					
+				createPieChart();
+				createColumnCharts();
+				
+    			$('#tabs').bind('tabsshow', function(event, ui) {
+					if (ui.index === 2 && barPlot._drawCount === 0) {
+						piePlot.replot();
+						barPlot.replot();
+						colPlot1.replot();
+						colPlot2.replot();
+	
+						// Need to raise links up so that they are clickable	
+						$('.chartLinks').parent().css("z-index", 1);
+						$('.chartLinks').parent().parent().css("z-index", 1);								
+						
+						
+					}
+   				 });
+				
+				dataView.beginUpdate();
+				
+				// second arg is index for unique identifier, in this case fixlet id w/ site name
+				dataView.setItems(data, GridFixlet.UNIQUE_ID);
+				
+				dataView.endUpdate();				
+				$("#dialog-modal").dialog('close')
+			}
+
+			
+			var GridFixlet = {};
+			
+			GridFixlet.NAME = 0;
+			GridFixlet.ID = 1;
+			GridFixlet.CATEGORY = 2;
+			GridFixlet.SOURCE_SEVERITY = 3;
+			GridFixlet.SOURCE_RELEASE_DATE = 4;
+			GridFixlet.LINK = 5;
+			GridFixlet.UNIQUE_ID = 6;
+			GridFixlet.COMPLIANCE = 7;
+			
+
+	
+			function createBarChart(fixletInfo) {
+				var ticks = [];
+
+				for(var i=0;i<7;i++) {
+					var $link = $(data[i][GridFixlet.LINK]);
+					
+					var name = data[i][GridFixlet.NAME];
+					name = name == null?"":name;
+					name = name.length > 50? name.substring(0,50) + "...":name;
+					
+					$link.html(name);
+					$link.addClass("chartLinks");
+
+					// add "outerHTML" of link		
+					ticks.push($link.wrap('<div></div>').parent().html());
+				}
+
+				var chartSeries1 = [
+					[27,1],
+					[24,2],
+					[20,3],
+					[3,4],
+					[28,5],
+					[48,6],
+					[11,7],
+					[61,8]
+				];
+
+				var chartSeries2 = [
+					[969,1],
+					[964,2],
+					[959,3],
+					[955,4],
+					[953,5],
+					[952,6],
+					[950,7],
+					[939,8]
+				];
+
+				barPlot = temui.chart.barChart('barChart', 
+					[chartSeries2, chartSeries1],
+					{	
+						highlighter: {
+							show: true,
+            				showTooltip: true,
+						    tooltipAxes: 'x',
+    						formatString:'<table class="jqplot-highlighter"><tr><td><?jxlat Endpoints:?></td><td>%s</td></tr></table>'
+            			},
+						series: [{label:"<?jxlat Unpatched?>", color:"#cd1717"}, {label:"<?jxlat Patched?>", color:"#A5BC4E"}],				
+						axes: {
+							yaxis: {
+								ticks: ticks
+							},
+							xaxis: {
+								label:'<?jxlat # of Patched/Unpatched Endpoints?>'
+							}
+						},
+						stackSeries: true,
+						legend: {
+							show: true,
+							placement:"outside",
+							location:"sw"
+						}
+					}
+				);
+
+				$("#barChartContainer").chartContainer({plot:barPlot});
+	
+	        	$('#barChart').bind('jqplotDataClick', 
+	            	function (ev, seriesIndex, pointIndex, data) {
+						alert('<?jxlat Series Index:?> ' + seriesIndex + "\r<?jxlat Point Index:?> " + pointIndex + "\r<?jxlat Data:?> " + data);
+	            	}
+	        	);
+			}	
+			
+
+			
+			function createPieChart(fixletInfo) {
+				var patchedComputers = 966909;
+				var unpatchedComputers = 925551;
+				var totalCriticalPatches = 1193;
+				var totalPatches = 3717;
+				
+				var data = [ ['Patched', patchedComputers],['Unpatched', unpatchedComputers] ];
+				var labels = ['<?jxlat Patched:?> ' + patchedComputers, '<?jxlat Unpatched:?> ' + unpatchedComputers]
+				
+				$("#totalPatched").html(totalPatches);
+				$("#totalCriticalPatches").html(totalCriticalPatches);
+
+				var options = {
+					seriesColors: ["#A5BC4E", "#cd1717"],
+					 
+					legend: {
+						labels:labels,
+						 show:true
+					}
+				}
+			
+				piePlot = temui.chart.pieChart('pieChart', [data],options);
+				$("#pieChartContainer").chartContainer({plot:piePlot});
+			}	
+
+			function createColumnCharts(field) {
+				var chartSeries1 = [
+						[1,189029],
+						[2,360279],
+						[3,303117],
+						[4,64213],
+						[5,15229]
+					];
+
+				var chartSeries2 = [
+						[1,183840],
+						[2,380156],
+						[3,301518],
+						[4,62200],
+						[5,17151]
+					];
+
+				var ticks = ["Other",
+					"Important",
+					"Critical",
+					"Moderate",
+					"Low"];
+
+			    colPlot1 = temui.chart.columnChart('columnChart1', [chartSeries1, chartSeries2], {
+					series: [{label:"<?jxlat Patched?>", color:"#A5BC4E"},{label:"<?jxlat Unpatched?>", color:"#cd1717"}],
+			        seriesDefaults: {
+						rendererOptions: {highlightMouseOver: false}
+					},
+					axes:{
+                		xaxis: {
+							ticks: ticks,
+                    		renderer: $.jqplot.CategoryAxisRenderer
+
+                		},
+						yaxis: {
+							label:'# of Patched/Unpatched Endpoints',
+							labelRenderer: $.jqplot.CanvasAxisLabelRenderer
+						}
+            		},
+					legend: {
+						show: true,
+						placement:"outsideGrid",
+						location:"s"
+					}}				
+        		);
+
+				chartSeries1 = [
+						[1,31394],
+						[2,10054],
+						[3,18549]
+					];
+
+				chartSeries2 = [
+						[1,30385],
+						[2,8307],
+						[3,21041]
+					];
+
+				ticks = [
+						"5/08/2012-6/11/2012",
+						"3/13/2012-4/09/2012",
+						"4/10/2012-5/07/2012"
+					];
+				
+			    colPlot2 = temui.chart.columnChart('columnChart2', [chartSeries1, chartSeries2], {
+					series: [{label:"<?jxlat Patched?>", color:"#A5BC4E"},{label:"<?jxlat Unpatched?>", color:"#cd1717"}],
+					highlighter: {
+						tooltipAxes: 'y',
+						show:true, 
+						showTooltip: true
+					},
+					legend: {
+						show: true,
+						placement:"outsideGrid",
+						location:"s"
+					},
+					axes:{
+                		xaxis: {
+							ticks: ticks,
+                    		renderer: $.jqplot.CategoryAxisRenderer
+
+                		},
+						yaxis: {
+							label:'<?jxlat # of Patched/Unpatched Endpoints?>',
+							labelRenderer: $.jqplot.CanvasAxisLabelRenderer
+						}
+            		}}				
+					
+        		);
+	
+				$("#columnChartContainer1").chartContainer({plot:colPlot1});
+				$("#columnChartContainer2").chartContainer({plot:colPlot2});	
+			}	
+
+			function loadData() {
+				$("#dialog-modal").dialog({
+					width:'auto',
+					height: 'auto',
+					modal: true,
+					position: "top",
+					closeOnEscape: false,
+					open: function(event, ui) { $(".ui-dialog-titlebar-close", $(this).parent()).hide() },
+					dialogClass: 'alert',
+					resizable:false
+				});	
+
+				var rel = '(name of it' 
+					+ ', id of it as string'
+					+ ', (if (exists category of it) then (if (category of it as lowercase contains "<unspecified>") then (category of it as string) else ("Unspecified") ) else ("Unknown")) '
+					+ ', (if (exists source severity of it) then  (if (source severity of it as lowercase contains "<unspecified>" or source severity of it as lowercase contains "<n/a>") then ("Unspecified") else (source severity of it) ) else ("Unspecified")) '
+					+ ', (if (exists source release date of it) then ((year of it as string & "/" & month of it as two digits & "/" & day_of_month of it as two digits & " (" & day_of_week of it as three letters & ")") of source release date of it) else ("--")) '
+					+ ', ("<A name=%22testLinks%22 title=%22" & name of it & "%22 href=%22" & link href of it & "%22>" & name of it & "</A>") '
+					+ ', (concatenation of (id of it as string) & name of site of it)) of bes fixlets';
+
+
+				var relData = new tem.relevance.RelevanceData();
+				relData.onChange = onLoad;
+				relData.load(rel);
+	
+				return false;
+			}
+
+			function testFilter(item, args) {
+				var filterString = args.searchString;
+				
+				if(filterString == null || filterString == "") {
+					return true;
+				}
+				
+				return (item[GridFixlet.NAME].toLowerCase().indexOf(filterString.toLowerCase()) != -1); 
+			}
+
+			function percentageBarFormatter(row, cell, value, columnDef, dataContext){
+			    if (value == null || value === "") {
+					return "";
+				}
+			    var color;
+				if (value >= 90) {
+					color = "#33cc14";
+				} else if (value >= 70) {
+					color = "#ffff1a";
+				} else if (value >= 20){
+					color = "#ffb31a";
+		        } else {
+		            color = "#e51717"
+		        } 
+			
+				var valuePercentage = dataContext[GridFixlet.COMPLIANCE] + "%";
+				
+				if(valuePercentage.length == 2){
+					valuePercentage = "&nbsp;&nbsp;&nbsp;" + valuePercentage;
+				}	
+				if(valuePercentage.length == 3){
+					valuePercentage = "&nbsp;" + valuePercentage;
+				}	
+
+				return '<table><tr>'
+						+ '<td>' + valuePercentage + '</td>'
+						+ '<td style="width:100%"><div style="display: inline-block;height: 6px;width:' + value + '%;background-color:' + color + ';"></div></td>'
+						+ '</tr></table>'
+			}
+
+
+		</script>
+		
+		<div id="dialog-modal" style="padding:50px;">
+			<img src="ADF/images/progress32.gif" style="float:left;"/><p style="margin-left:40px; padding-top:10px;"><?hxlat Loading...?></p>
+		</div>		
+
+		
+		<div data-tem-role="topNav">
+			<button data-tem-role="refreshButton"></button>
+		</div>
+				
+						
+		<div data-tem-role="header">
+			<?hxlat ADF 2.2.1- Sample Dashboard?>
+			<div id="lastUpdate" data-tem-role="lastUpdate"></div>	
+		</div>
+
+
+		<div id="tabs">
+			<ul>
+				<li><a href="#tabs-1"><?hxlat Content Creation/Interaction?></a></li>
+				<li><a id="tab2" href="#tabs-2"><?hxlat Console/Context Information?></a></li>
+				<li><a id="tab4" href="#tabs-4"><?hxlat Charts?></a></li>
+				<li><a id="tab5" href="#tabs-grid"><?hxlat DataGrid?></a></li>
+				<li><a id="tab3" href="#tabs-3"><?hxlat Misc. Widget Examples?></a></li>
+			</ul>
+
+			<div id="tabs-1">
+				<button id="createAction"><?hxlat Create Action?></button>
+				<br/>
+				<br/>
+				<button id="createActionNoUI"><?hxlat Create Action, Skip UI?></button>
+				<br/>
+				<br/>
+				<button id="createActionNoDoc"><?hxlat Create Action, Don't open document window.?></button>
+				<br/>
+				<br/>
+				<button id="openComputerGroup"><?hxlat Open Computers?></button>
+				<br/>
+				<br/>
+				<button id="createAnalysys" onclick="createAnalysis()"><?hxlat Create Analysis?></button>
+			</div>
+		
+			<div id="tabs-2">
+				<p><?hxlat Context Information:?> 
+					<ul id="contextInfo"></ul>
+				</p>
+	
+				<p><?hxlat Localization example:?> 
+					<ul id="localizationExample"></ul>
+				</p>
+
+			</div>
+			<div id="tabs-3">
+				<div class="ui-widget-content ui-corner-all" style="padding:2px;">		
+					<div id="expandablePanel" class="ui-widget-header ui-corner-all" style="padding:5px; margin-bottom:3px;cursor:pointer;">
+						<span class="ui-icon ui-icon-triangle-1-s" style="float:left; display:none;"></span>
+						<span class="ui-icon ui-icon-triangle-1-n" style="float:left"></span>
+						<span><?hxlat Collapsible Panel?></span>
+					</div>
+			
+					<div id="expandableContent" style="padding:10px;">	
+						<div style="height:200px;">&nbsp;</div>
+					</div>
+				</div>
+				
+				<p><a href="javascript:temui.showLogDialog();"><?hxlat Log Settings Dialog ?></a></p>
+				<p><a href="javascript:tem.evalRel('namesa of bes fixlets');"><?hxlat Error Popup?></a></p>	
+				<p>For more available widgets (i.e. DatePicker and Slider), refer to the <a href="http://jqueryui.com/demos/" target="_new">jQuery UI documentation</a> for jQuery UI 1.8.17</p>
+			</div>
+			<div id="tabs-grid">
+		
+				<div id="dataGridContainer" style="padding:0px; margin-top:5px;" class="">
+					<h3 data-tem-role="header"><?hxlat Fixlets?></h3>
+					<div data-tem-role="toolbar">
+						<div data-tem-role="buttonContainer">
+							<button><?hxlat Regular Button?></button>
+							<button
+								data-tem-role="bulkButton"><?hxlat Bulk Button?></button>
+							<button id="bulkButton" 
+								data-tem-role="bulkButton">
+								<span style="vertical-align: middle;"><?hxlat Actions?></span>
+								<span class="ui-icon ui-icon-triangle-1-s" style="display:inline-block; vertical-align: middle;"></span>
+							</button>
+						</div>
+						<div data-tem-role="filterContainer">
+							<input data-tem-role="filter" type="text"/>
+						</div>
+						
+						<br clear="all">
+							
+					</div>
+					<div id="sampleGrid" style="height:500px;"></div>
+					<div id="pager"></div>
+				</div>
+			</div>
+			
+						
+			<div id="tabs-4">
+				<div>
+					<div>
+						<div id="barChartContainer">
+							<h3 data-tem-role="header"><?hxlat Bar Chart Example?></h3>
+							<div id="barChart" style="height:350px; width:100%;"></div>
+						</div>
+					</div>	
+		 		</div>
+				
+				<div class="yui3-g">
+					<div class="yui3-u-1-2">
+						<div id="columnChartContainer1">
+							<h3 data-tem-role="header"><?hxlat Column Chart Example #1?></h3>
+							<div id="columnChart1" style="height:350px; width:100%;"></div>
+						</div>
+					</div>
+					
+					<div class="yui3-u-1-2">
+						<div id="columnChartContainer2">
+							<div data-tem-role="header">
+								<span><?hxlat Column Chart Example #2?></span>
+							</div>
+							<div id="columnChart2" style="height:350px; width:100%;"></div>
+						</div>
+					</div>
+				</div>				
+
+				<div class="yui3-u">
+					<div id="pieChartContainer">
+						<h3 data-tem-role="header"><?hxlat % Patched/Unpatched Patches?></h3>
+						<div id="pieChart" style="height:275px; width:300px;"></div>		
+					</div>
+				</div>
+			</div>			
+		</div>
+
+
+		]]>
+	   </HTML>
+	 </Page>
+   </Wizard>
+</BES>

@@ -1,0 +1,8 @@
+<div>
+	<ul class="temui-tab-titles">
+		<li ng-repeat="tab in tabs">
+			<a href="#{{tab.id}}" class="temui-tab-heading">{{tab.heading}}</a>
+		</li>
+	</ul>
+	<div ng-transclude />
+</div>

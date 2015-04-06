@@ -1,0 +1,67 @@
+<h1><code ng:non-bindable="">adfTopNavigation</code>
+<span class="hint">(directive in module <code ng:non-bindable="">adf-ng</code>
+)</span>
+</h1>
+<div><h2 id="Description">Description</h2>
+<div class="description"><p>Top navigation bar which conains dashboard title and navigation buttons.</p></div>
+<h2 id="Usage">Usage</h2>
+<div class="usage">as attribute<pre class="prettyprint linenums">&lt;ANY adf-top-navigation
+     title="{String}"
+     [showRefresh="{Boolean}"]
+     [showPrint="{Boolean}"]
+     [extraButtons="{Array}"]
+     [refresh="{expression}"]&gt;
+   ...
+&lt;/ANY&gt;</pre>
+<h3 id="Parameters">Parameters</h3>
+<ul class="parameters"><li><code ng:non-bindable="">title – {String} – </code>
+<p>Dashboard/webreport title</p></li>
+<li><code ng:non-bindable="">showRefresh<i>(optional)</i> – {Boolean=} – </code>
+<p>Whether or not the refresh is displayed</p></li>
+<li><code ng:non-bindable="">showPrint<i>(optional)</i> – {Boolean=} – </code>
+<p>Whether or not the print is displayed</p></li>
+<li><code ng:non-bindable="">extraButtons<i>(optional)</i> – {Array=} – </code>
+<p>Array of other button definitions to be included in the top right corner. Each button definition can define the following properties: name (String), cssClass (String), and click (Function callback on click event).</p></li>
+<li><code ng:non-bindable="">refresh<i>(optional)</i> – {expression=} – </code>
+<p>Callback function triggered when refresh button is clicked</p></li>
+</ul>
+</div>
+<h2 id="Example">Example</h2>
+<div class="example"><h4>Source</h4>
+<div source-edit="adf-ng" source-edit-deps="angular.js script.js" source-edit-html="content.html" source-edit-css="" source-edit-js="script.js-6" source-edit-unit="" source-edit-scenario=""></div>
+<div class="tabbable"><div class="tab-pane" title="content.html">
+<pre class="prettyprint linenums" ng-set-text="content.html"></pre>
+<script type="text/ng-template" id="content.html">
+  <div ng-controller="MainController">
+      <div adf-top-navigation 
+              title="Dashboard Title"
+              show-refresh="true"
+              show-print="true"
+              refresh="onRefresh()"
+              extra-buttons="navButtons"
+      />
+  </div>
+</script>
+</div>
+<div class="tab-pane" title="script.js">
+<pre class="prettyprint linenums" ng-set-text="script.js-6"></pre>
+<script type="text/ng-template" id="script.js-6">
+  function MainController($scope){
+      $scope.navButtons = [
+          {
+              name: "config", 
+              click: function(){
+                  alert("Sample button clicked");
+              }
+          }
+      ];
+
+      $scope.onRefresh = function(){
+          alert('Refresh button clicked');
+      };
+  }
+</script>
+</div>
+</div><h4>Demo</h4>
+<div class="well doc-example-live animator-container" ng-embed-app="adf-ng" ng-set-html="content.html" ng-eval-javascript="script.js-6"></div></div>
+</div>

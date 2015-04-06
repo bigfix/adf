@@ -1,0 +1,96 @@
+<!--
+  (C) Copyright IBM Corp. 2011-2013.  All Rights Reserved.
+  HTML content for the sample dashboard
+ -->
+<div ng-controller="MainController">
+
+    <div adf-app loading="pageLoading">
+        
+        <div adf-top-navigation 
+                title="<?hxlat ADF 2.3.0 - Sample Dashboard with AngularJS?>"
+                show-refresh="true"
+                show-print="true"
+                refresh="onRefresh()"
+                extra-buttons="navButtons"
+        />
+
+        <div adf-tab-set>
+
+            <div adf-tab heading="<?hxlat Context Information?>">
+                <div ng-controller="ContextInfoController">
+                    <p><?hxlat Context Information:?>
+                        <ul>
+                            <li><?hxlat Version:?> {{consoleVersion}}</li>
+                            <li><?hxlat Running in Console:?> {{inConsole}}</li>
+                            <li><?hxlat User Locale:?> {{locale}}</li>
+                            <li><?hxlat Preferred Language:?> {{preferredLanguage}}</li>
+                            <li><?hxlat Server URL:?> {{serverURL}}</li>
+                            <li><?hxlat Base Directory:?> {{baseDirectory}}</li>
+                            <li><?hxlat Window Height:?> {{windowHeight}}</li>
+                            <li ng-show="inConsole"><?hxlat Current DSN:?> {{currentDSN}}</li>
+                            <li ng-show="inConsole"><?hxlat Current User:?> {{currentUser}}</li>
+                        </ul>
+                    </p>
+                    <p><?hxlat Localization example:?>
+                        <ul>
+                            <li><?hxlat The time now is:?> {{currentTime | date:"medium"}}</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+
+            <div adf-tab heading="<?hxlat Content Creation?>" active="tab2">
+                <div ng-controller="ContentCreationController">
+                    <p>
+                        <button adf-button ng-click="createAction()"><?hxlat Create Action?></button>
+                        <br/><br/>
+                        <button adf-button ng-click="createActionNoUI()"><?hxlat Create Action, Skip UI?></button>
+                        <br/><br/>
+                        <button adf-button ng-click="createActionNoDoc()"><?hxlat Create Action, no document window.?></button>
+                        <br/><br/>
+                        <button adf-button ng-click="openComputers()"><?hxlat Open Computers?></button>
+                        <br/><br/>
+                        <button adf-button ng-click="createAnalysis()"><?hxlat Create Analysis?></button>
+                    </p>
+                </div>
+            </div>
+
+            <div adf-tab heading="<?hxlat Sample Charts?>">
+                <div ng-controller="ChartController">
+                	<div adf-chart-container header="<?hxlat Bar Chart Example?>" id="barChart">
+            	        <div adf-bar-chart 
+                    		chart-data="barCharData" 
+                    		chart-options="barCharOptions" 
+                            chart-click="onBarCharDataClicked(seriesIndex, pointIndex, data)"
+                            chart-highlight="onBarChartHighlight(seriesIndex, pointIndex, data)"
+                            chart-unhighlight="onBarChartUnhighlight()"
+                    		style="height: 350px; width: 100%">
+                    	</div>
+            	    </div>
+                    <div class="yui3-g">
+                        <div class="yui3-u-1-2">
+                            <div adf-chart-container header="<?hxlat Column Chart Example?>" style="margin-right: 10px">
+                                <div adf-column-chart 
+                                    chart-data="columnChartData" 
+                                    chart-options="columnChartOptions" 
+                                    style="height: 350px; width: 100%">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="yui3-u-1-2">
+                            <div adf-chart-container header="<?hxlat Pie Chart Example?>">
+                                <div adf-pie-chart 
+                                    chart-data="pieChartData" 
+                                    chart-options="pieChartOptions" 
+                                    style="height: 350px; width: 100%">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>

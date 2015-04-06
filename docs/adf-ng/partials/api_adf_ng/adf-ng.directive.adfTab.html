@@ -1,0 +1,54 @@
+<h1><code ng:non-bindable="">adfTab</code>
+<span class="hint">(directive in module <code ng:non-bindable="">adf-ng</code>
+)</span>
+</h1>
+<div><h2 id="Description">Description</h2>
+<div class="description"><p>Tab component. This is a wrapper of jquery tab. It must be nested under <a href="#/api_adf_ng/adf-ng.directive:adfTabSet">adfTabSet</a> component.</p></div>
+<h2 id="Usage">Usage</h2>
+<div class="usage">as attribute<pre class="prettyprint linenums">&lt;ANY adf-tab
+     heading="{String}"
+     [active="{Boolean}"]
+     [select="{Function}"]&gt;
+   ...
+&lt;/ANY&gt;</pre>
+<h3 id="Parameters">Parameters</h3>
+<ul class="parameters"><li><code ng:non-bindable="">heading – {String} – </code>
+<p>Tab heading</p></li>
+<li><code ng:non-bindable="">active<i>(optional)</i> – {Boolean=} – </code>
+<p>Whether or not this tab content is visible</p></li>
+<li><code ng:non-bindable="">select<i>(optional)</i> – {Function=} – </code>
+<p>Callback function triggered when the tab is selected</p></li>
+</ul>
+</div>
+<h2 id="Example">Example</h2>
+<div class="example"><h4>Source</h4>
+<div source-edit="adf-ng" source-edit-deps="angular.js script.js" source-edit-html="content.html" source-edit-css="" source-edit-js="script.js-5" source-edit-unit="" source-edit-scenario=""></div>
+<div class="tabbable"><div class="tab-pane" title="content.html">
+<pre class="prettyprint linenums" ng-set-text="content.html"></pre>
+<script type="text/ng-template" id="content.html">
+  <div ng-controller="MainController">
+      Tab 1 is selected: {{tab1Active}}
+      <div adf-tab-set>
+          <div adf-tab heading="Tab 1" active="$parent.tab1Active">
+              Tab 1 content
+          </div>
+          <div adf-tab heading="Tab 2" select="tab2Selected()">
+              Tab 2 content
+          </div>
+      </div>
+  </div>
+</script>
+</div>
+<div class="tab-pane" title="script.js">
+<pre class="prettyprint linenums" ng-set-text="script.js-5"></pre>
+<script type="text/ng-template" id="script.js-5">
+  function MainController($scope){
+      $scope.tab2Selected = function(){
+          alert("Tab 2 selected!");
+      }
+  }
+</script>
+</div>
+</div><h4>Demo</h4>
+<div class="well doc-example-live animator-container" ng-embed-app="adf-ng" ng-set-html="content.html" ng-eval-javascript="script.js-5"></div></div>
+</div>

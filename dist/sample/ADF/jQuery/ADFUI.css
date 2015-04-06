@@ -1,0 +1,189 @@
+ /* ADF v2.2.1 */
+
+* {
+	font-family: Verdana, Arial;
+	font-size: 8pt;
+}
+
+body {margin-top: 0;}
+
+
+
+.temui-top-nav{
+	position:absolute;
+	top:-2px;
+	right:0px;
+	border:1px solid #a4b7d3; 
+	border-right:none; 
+	padding:0; 
+	margin:0;
+	margin-bottom:5px; 
+	margin-right:1px; 
+	background-color: #d4e0f2;
+	padding-left:2px;
+	padding-right:4px;
+	padding-bottom:2px;
+}
+
+.temui-refresh-button, .temui-print-button {
+	padding:0px;
+	width:80px;
+	height:20px;
+	background-image:url('../images/nav_button.png');
+	border:1px solid #aaaaaa;
+}
+
+
+.temui-refresh-button:hover {
+	background-image:url('../images/nav_button_over.png') !important;
+	border:1px solid #cccccc;
+}
+
+.temui-print-button:hover {
+	background-image:url('../images/nav_button_over.png') !important;
+	border:1px solid #cccccc;
+}
+
+
+.temui-header {
+	padding: 0px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #86be15;
+	font-weight: bold;
+	margin-bottom: 3px;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: 5px;
+	font-size: 16px; 
+	color: #555555;	
+	font-family: Helvetica, Geneva, Arial, SunSans-Regular, sans-serif;
+}
+
+.temui-last-update {
+	text-align: right;
+	vertical-align: top;
+	position: relative;
+	top: 0px;
+	right: 24px;
+	margin-bottom: 12px;
+	font-size: 11px;
+	font-weight: bold;
+	color: #999999;
+}
+
+.temui-dashboard-item-header {
+	margin: -6px; 
+	margin-bottom: 6px;
+	padding: 5px; 
+	font-weight: normal;
+}
+
+.temui-dashboard-item {
+	margin-right:10px; 
+	margin-top:10px; 
+	border-style:solid; 
+	border-color:#cccccc; 
+	border-width:1px; 
+	padding:5px;
+}
+
+
+.temui-datagrid-container {
+	border-style:solid;
+	border-width: 1px;
+	border-color: #cccccc;
+}
+
+.temui-datagrid-header {
+	margin:-1px;	
+	margin-bottom:0px;
+	font-weight: normal;
+	padding: 5px;
+}
+
+
+.temui-toolbar {
+	background-color: #f4f4f8;
+	padding: 5px;
+}
+
+
+.temui-toolbar-button .ui-state-default {
+	border: 1px solid #bbbbbb;
+	background: #eeeeee url("../images/test.png") 50% 50% repeat-x;
+	font-weight: normal;
+	color: #131313;	
+	margin-right: 5px;
+}
+
+
+
+.temui-toolbar-button .ui-button-text-only .ui-button-text { 	
+	line-height: 16px;
+	padding-top: 1px;
+	padding-left: 1em;
+	padding-right: 1em;
+	padding-bottom: 1px; 
+}	
+
+
+
+/* this background image is not being picked up!!! */	
+.temui-toolbar-button .ui-state-hover {
+	border: 1px solid #769DC0;
+	background: #D4E7F8 url(images/ui-bg_inset-hard_80_d4e7f8_1x100.png) 50% 50% repeat-x;
+	font-weight: normal;
+	color: #131313;
+}
+
+
+.temui-datagrid-filter-container {
+	position: absolute;
+	right: 5px;
+}
+
+.temui-body-no-header {
+	margin-top: 10px;
+}
+
+.temui-filter-active {
+	color: #000000;	
+}
+
+.temui-filter-inactive {
+	color: #bbb;	
+}
+
+.jqplot-highlighter-tooltip, .jqplot-canvasOverlay-tooltip {
+	border: 1px solid #cccccc;
+	font-size: 12px;
+	background-color: #eeeeee;
+	padding: 4px;
+	/* without this tooltips fall behind highlights*/
+	z-index:1;
+}
+
+div.jqplot-table-legend-swatch-outline {
+	border: none;
+	padding:2px;
+}
+
+.jqplot-table-legend{
+	background-color: #ffffff;
+}
+
+
+
+
+.slick-cell.selected {
+	background-color: #c7e4ff;
+}
+
+.slick-pager {
+	width: auto;
+	background-color:#f1f1f4;
+	border:none;
+	border-top:1px solid #999999;
+}
+
+

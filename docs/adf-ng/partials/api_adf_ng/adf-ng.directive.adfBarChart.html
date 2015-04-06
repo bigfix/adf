@@ -1,0 +1,95 @@
+<h1><code ng:non-bindable="">adfBarChart</code>
+<span class="hint">(directive in module <code ng:non-bindable="">adf-ng</code>
+)</span>
+</h1>
+<div><h2 id="Description">Description</h2>
+<div class="description"><p>Bar chart component. This component extends jqPlot bar chart component.</p>
+
+<p>See <a href="http://www.jqplot.com/docs">http://www.jqplot.com/docs</a> for more information on input data format and available options.</p>
+
+<p>See ADF documentation on temui.chart.barChart for more information on the underlying component.</p></div>
+<h2 id="Usage">Usage</h2>
+<div class="usage">as attribute<pre class="prettyprint linenums">&lt;ANY adf-bar-chart
+     chartData="{Array}"
+     chartOptions="{Object}"
+     [chartClick="{Function}"]
+     [chartHighlight="{Function}"]
+     [chartUnhighlight="{Function}"]
+     [chartRightClick="{Function}"]&gt;
+   ...
+&lt;/ANY&gt;</pre>
+<h3 id="Parameters">Parameters</h3>
+<ul class="parameters"><li><code ng:non-bindable="">chartData – {Array} – </code>
+<p>Array, each element is a data array for a series.</p></li>
+<li><code ng:non-bindable="">chartOptions – {Object} – </code>
+<p>jqPlot chart options</p></li>
+<li><code ng:non-bindable="">chartClick<i>(optional)</i> – {Function=} – </code>
+<p>Callback function triggered when a bar is clicked. Injected parameters: ev, seriesIndex, pointIndex, data.</p></li>
+<li><code ng:non-bindable="">chartHighlight<i>(optional)</i> – {Function=} – </code>
+<p>Callback function triggered when a bar is highlighted. Injected parameters: ev, seriesIndex, pointIndex, data.</p></li>
+<li><code ng:non-bindable="">chartUnhighlight<i>(optional)</i> – {Function=} – </code>
+<p>Callback function triggered when a bar is unhighlighted. Injected parameters: ev.</p></li>
+<li><code ng:non-bindable="">chartRightClick<i>(optional)</i> – {Function=} – </code>
+<p>Callback function triggered when rightclick happens on a bar. Injected parameters: ev, seriesIndex, pointIndex, data.</p></li>
+</ul>
+</div>
+<h2 id="Example">Example</h2>
+<div class="example"><h4>Source</h4>
+<div source-edit="adf-ng" source-edit-deps="angular.js script.js" source-edit-html="content.html" source-edit-css="" source-edit-js="script.js-2" source-edit-unit="" source-edit-scenario=""></div>
+<div class="tabbable"><div class="tab-pane" title="content.html">
+<pre class="prettyprint linenums" ng-set-text="content.html"></pre>
+<script type="text/ng-template" id="content.html">
+  <div ng-controller="ChartController">
+      <div adf-chart-container header="Chart Title">
+          <div adf-bar-chart 
+              chart-data="barCharData" 
+              chart-options="barCharOptions"
+              chart-click="onBarCharDataClicked(seriesIndex, pointIndex, data)"
+              style="height: 250px; width: 100%"
+          />
+      </div>
+  </div>
+</script>
+</div>
+<div class="tab-pane" title="script.js">
+<pre class="prettyprint linenums" ng-set-text="script.js-2"></pre>
+<script type="text/ng-template" id="script.js-2">
+function ChartController($scope) {
+  var chartSeries1 = [[923,1], [910,2], [969,3], [964,4], [959,5]];
+  var chartSeries2 = [[37,1], [50,2], [27,3], [24,4], [20,5]];
+  var ticks = ["Other", "Important", "Critical", "Moderate", "Low"];
+  $scope.barCharData = [chartSeries1, chartSeries2];
+  
+  $scope.barCharOptions = {
+      highlighter: {
+          show: true,
+          showTooltip: true,
+          tooltipAxes: 'x',
+          formatString:'Endpoints: %s'
+      },
+      series: [{label:"Unpatched", color:"#cd1717"}, {label:"Patched", color:"#A5BC4E"}],
+      axes: {
+          yaxis: {
+              ticks: ticks
+          },
+          xaxis: {
+              label:'# of Patched/Unpatched Endpoints'
+          }
+      },
+      stackSeries: true,
+      legend: {
+          show: true,
+          placement:"inside",
+          location:"se"
+      }
+  };
+
+  $scope.onBarCharDataClicked = function(seriesIndex, pointIndex, data){
+      alert('seriesIndex: ' + seriesIndex + ', pointIndex:' + pointIndex + ', data: '+data);
+  };
+}
+</script>
+</div>
+</div><h4>Demo</h4>
+<div class="well doc-example-live animator-container" ng-embed-app="adf-ng" ng-set-html="content.html" ng-eval-javascript="script.js-2"></div></div>
+</div>

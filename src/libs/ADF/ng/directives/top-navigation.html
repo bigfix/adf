@@ -1,0 +1,9 @@
+<div>
+	<div class="temui-top-nav">
+		<button class="temui-top-nav-button" ng-click="refreshClicked()" ng-show="showRefresh" title="Refresh"><div class="temui-top-nav-refresh-button"></div></button>
+		<button ng-repeat="button in extraButtons" class="temui-top-nav-button" ng-click="button.click()" title="{{button.name}}"><div class="{{button.cssClass}}">{{button.name}}</div></button>
+		<button class="temui-top-nav-button" ng-click="printClicked()" ng-show="showPrint" title="Print"><div class="temui-top-nav-print-button"></div></button>
+	</div>
+	<div class="temui-header">{{title}}</div>
+	<div class="temui-last-update">{{lastUpdate | date:"medium"}}</div>
+</div>

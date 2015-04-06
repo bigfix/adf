@@ -1,0 +1,465 @@
+<?xml version="1.0"?>
+<BES>
+  <Wizard>
+    <Title>Sample Dojo</Title>
+    <UIHooks LaunchType="Document" RequiresAuthoring="false"></UIHooks>
+    <DefaultPage>Page1</DefaultPage>
+    <Page Name="Page1">
+      <Title>Page1 Title</Title>
+      <HTML>
+		<![CDATA[
+		
+
+		<style type="text/css">
+	        div#loadingInnerContainer {
+				position:relative;
+				top: 20%;
+	        	display:table;
+	        	margin:0 auto;
+				border-style: solid;
+				border-width: 1px;
+				border-color: #cccccc;
+				background-color: #eeeeee;
+				padding: 10px;
+				vertical-align: middle;
+	        }
+		</style>
+
+	    <!--[if lt IE 8]>
+	        <style type="text/css">
+	            #loadingContainer {text-align: center;}
+                #loadingContainer * {text-align: left;}
+                div#loadingInnerContainer {
+					zoom: 1;
+					display: inline;
+                }
+	        </style>
+	    <![endif]-->
+
+		<SCRIPT src="ADFAPI.js" type="text/javascript"></SCRIPT>
+
+		<script type="text/javascript">
+			var djConfig = {
+				parseOnLoad: true, 
+				locale:tem.context.getUserLocale()
+			};
+		</script>
+
+
+	    <div id="loadingContainer">
+	        <div id="loadingInnerContainer">
+				<p>
+					<img src="progress32.gif" style="margin-right: 10px; vertical-align: middle;"/>
+					<?hxlat Loading required libraries...?>
+				</p>
+	        </div>
+	    </div>
+
+		<div id="header" class="header" style="display:none">
+			<h1 id="dashHeader"><?hxlat Sample Dojo Dashboard - ADF 2.2.1?></h1>
+		</div>
+
+
+		<script type="text/javascript">
+			(function(){
+				// install dojo in temp directory if it's not present
+				var dojoLibrary= new tem.library.JavaScriptLibrary('dojoWTED', 'dojo_1.5.1_WTED_1100', 'dojo_1.5.1_WTED_1100.besarchive', 'BFArchive.exe');
+				
+				dojoLibrary.install();
+				
+				document.getElementById('loadingContainer').style.display = 'none';
+				document.getElementById('header').style.display = 'block';
+				
+				dojoLibrary.loadJavaScript("dojo/dojo.js.uncompressed.js");
+
+				dojoLibrary.loadCSS("dojo/resources/dojo.css");
+				dojoLibrary.loadCSS("dijit/themes/dijit.css");
+				dojoLibrary.loadCSS("dijit/themes/claro/claro.css");
+				dojoLibrary.loadCSS("dojoe/table/themes/claro/Table.css");
+				
+				// setting body style through JS as entire OJO HTML contents are put in a body tag
+				document.body.className='claro';
+			})();
+		</script>
+	
+		<link rel="stylesheet" href="ADFCustom.css"/>
+
+		<style type="text/css">
+			/**
+			 * Override some dojo styles as not being able to set doctype for dashboard
+			 * caused some issues with TED Table component
+			 */
+			.claro .dijitMenu {
+				margin: 0;
+			}
+
+			.claro .dijitCheckBox,
+			.claro .dijitToggleButton .dijitCheckBoxIcon {
+				/* unchecked */
+				background-position: -15px 0%;
+			}
+	
+			.claro .dijitCheckBoxChecked,
+			.claro .dijitToggleButtonChecked .dijitCheckBoxIcon {
+				background-position: -0px 0%;
+			}
+			
+			.claro .dijitCheckBoxDisabled {
+				background-position: -75px 0%;
+			}
+			
+			.claro .dijitCheckBoxCheckedDisabled {
+				background-position: -60px 0%;
+			}
+			
+			.claro .dijitCheckBoxHover {
+				background-position: -45px 0%;
+			}
+			
+			.claro .dijitCheckBoxCheckedHover {
+				background-position: -30px 0%;
+			}
+			
+			/* TED Table.css cause issues with tab navigator losing its content borders */
+			.claro .dijitTabContainerTop-container {
+  				border-left: 1px solid #b5bcc7;
+  				border-right: 1px solid #b5bcc7;
+  				border-bottom: 1px solid #b5bcc7;
+			}
+    	</style>
+ 
+	
+		<!-- Must be included before first require as it adjusts Dojo behavior so module loading works -->
+		<SCRIPT src="AdfDojoPatch.js" type="text/javascript"></SCRIPT>
+		
+		<SCRIPT src="resourcesDojoUI.js" type="text/javascript"></SCRIPT>
+		
+		<!-- Provides custom logging and error handling -->
+		<SCRIPT src="AdfDojoSupport.js" type="text/javascript"></SCRIPT>
+
+	
+        <script>
+			tem.config.sites = [{key:"BES_Support", name:'BES Support'}];		
+
+			dojo.require("dijit.TitlePane");
+            dojo.require("dojo.data.ItemFileReadStore");
+			dojo.require("dojoe.mapping");
+	        dojo.require("dojoe.table.Table");
+
+    		dojo.require("dojox.grid.enhanced.plugins.Menu");
+
+    		dojo.require("dijit.layout.TabContainer");
+    		dojo.require("dijit.layout.ContentPane");
+
+
+            dojo.addOnLoad(function() {
+				var testGrid = dijit.byId("testGrid");
+				testGrid.addToActionList(modifyRowMenuItem);
+				
+				
+				loadPaginatedExample();
+				
+				var rel = '(id of it,name of it,name of it, name of it) of bes sites';		
+				tem.evalRel(rel, {success:loadCallback});
+				
+				// fix for issue where grid disappears when re-opening TitlePane	
+				dojo.connect(dijit.byId('tp2'), 'onShow', function(event) {setTimeout(function() {dijit.byId("testGrid2").render();}, 500)});
+				
+				var infoList = dojo.byId('contextInfo');
+				var contextItem= dojo.create('li',  {innerHTML:'Version: ' + tem.context.getVersion()});
+				infoList.appendChild(contextItem);
+				contextItem= dojo.create('li',  {innerHTML:'Running in Console: ' + tem.context.isInConsole()});
+				infoList.appendChild(contextItem);
+				contextItem= dojo.create('li',  {innerHTML:'User Locale: ' + tem.context.getUserLocale()});
+				infoList.appendChild(contextItem);
+				contextItem= dojo.create('li',  {innerHTML:'Preferred Language: ' + tem.context.getPreferredLanguage()});
+				infoList.appendChild(contextItem);
+				contextItem= dojo.create('li',  {innerHTML:'Server URL: ' + tem.context.getServerURL()});
+				infoList.appendChild(contextItem);
+				contextItem= dojo.create('li',  {innerHTML:'Current DSN: ' + tem.context.getCurrentDSN()});
+				infoList.appendChild(contextItem);
+				contextItem= dojo.create('li',  {innerHTML:'Current User: ' + tem.context.getCurrentUser()});
+				infoList.appendChild(contextItem);
+				contextItem= dojo.create('li',  {innerHTML:'Base Directory: ' +tem.context.getBaseDirectory()});
+				infoList.appendChild(contextItem);
+				contextItem= dojo.create('li',  {innerHTML:'Window Height: ' + tem.context.getWindowHeight()});
+				infoList.appendChild(contextItem);
+
+				var localizationObj = dojo.byId('localizationExample');
+				var localizationExample= dojo.create('li',  {innerHTML:tem.l10n.format('<?rxlat The time {0} is: {1} ?>', '"now"', 'now')});
+				localizationObj.appendChild(localizationExample);
+				
+				// show dojo components after dojo loads to avoid flashing style changes
+				document.getElementById('apiDemo').style.display = 'block';
+				document.getElementById('miscDemo').style.display = 'block';
+				document.getElementById('storeDemo').style.display = 'block';
+				document.getElementById('tableDemo').style.display = 'block';
+			});	
+	
+	
+			function loadPaginatedExample() {		
+
+				var relevanceStr = '(id of it,name of it,name of site of it) of bes fixlets';
+
+				var testStore = new temui.dojo.data.RelevanceResultsStore({
+					fieldMap: [{index:0, key: 'id'}, 
+								{index:1, key: 'name'}, 
+								{index:2, key: 'name of site'}],
+					
+					relevanceQuery: relevanceStr,
+										
+					getIdentity: function(item){
+						return item[0] + "_" + item[2];	
+					},
+					
+					getIdentityAttributes: function(/* item */ item){
+						return [item[0], item[2]]; // Array
+					}
+					
+				});
+
+				var testPaginatedGrid = dijit.byId("testPaginatedGrid");
+				testPaginatedGrid.grid.setStore(testStore);
+            }	
+			
+            var paginatedLayout = [{
+				rows: [{
+					field: 1,
+					name: '<?jxlat Name ?>',
+					width: '100%'
+				}, {
+					field: '0',
+					name: '<?jxlat Site Id?>',
+					width: '150px'
+				}, {
+					field: 2,
+					name: '<?jxlat Description?>',
+					width: '450px'
+				}]
+			}];			
+			
+			function loadCallback(results) {		
+				var properties = [];
+			 
+	       	 	for (var i = 0; i<results.length; i++) {
+	       	 		properties.push({id:results[i][0], name:results[i][1], uniqueId:i, description:results[i][2]});
+	       	 	}
+
+				var dataItems = {
+               		identifier: 'uniqueId',
+               		label: 'uniqueId',
+               		items: properties
+        		};
+				
+				var testStore = new dojo.data.ItemFileReadStore({data:dataItems});
+
+				var testGrid = dijit.byId("testGrid");
+				testGrid.grid.setStore(testStore);
+            }
+
+			function createAction(){
+				var testAction = new tem.model.SingleAction("Test Action", "test relevance", "// do nothing");
+				var testActionSettings = new tem.model.ActionSettings();
+				testActionSettings.HasMessage = true;
+				testActionSettings.ActionUITitle = "actionUI";
+				testAction.Settings = testActionSettings;
+				tem.content.createContent(testAction, false, false);
+			}
+			
+			function openComputers(){
+				var computerIds = tem.evalRel('ids of bes computers');
+				tem.content.openComputerGroup( computerIds);
+			}
+
+	
+			/**
+			 * Table component configuration
+			 */
+            var layout = [{
+				rows: [{
+					field: 'name',
+					name: '<?jxlat Name ?>',
+					width: '100%'
+				}, {
+					field: 'id',
+					name: '<?jxlat Site Id?>',
+					width: '150px'
+				}, {
+					field: 'description',
+					name: '<?jxlat Description?>',
+					width: '450px'
+				}]
+			}];			
+	
+			function modifyRow() {
+				var testGrid = dijit.byId("testGrid");
+					var items = testGrid.grid.selection.getSelected();
+   				if (items.length) {
+					var sites = '';
+					var delimiter = '';
+        			dojo.forEach(items, function(selectedItem) {
+            			if(selectedItem !== null) {
+               				sites += delimiter + selectedItem.id;
+            			} 
+						delimiter = ', ';
+        			});
+		
+					alert('Would be modifying sites: ' + sites);
+    			} else {
+					alert('No rows selected.');
+				}
+			}
+	
+			var modifyRowMenuItem = new dijit.MenuItem({
+				label: "<?jxlat Modify Rows ?>",
+				id: "customMenuItem1",
+				onClick: modifyRow,
+				onKeypress: modifyRow
+			});
+			
+
+			var menuForTableOne = { headerMenu:'headerMenu', rowMenu:'rowMenu', selectedRegionMenu:'selectedRegionMenu'};
+			var filtersForTableOne = { advancedFilter:true, quickFilter:true, ruleCount:0};
+
+			var sortFieldsForTableOne = [{ 
+				attribute:layout.field,
+				descending:true
+			  }];		
+									
+			var toolbarOptionsForTableOne = {
+				refreshIcon:true,
+				actionMenu:true,
+				configTableIcon:true, configTableMenu: true,
+				exporterIcon: true, exporterMenu: true,
+				printerIcon:true, printerMenu: true											
+			};
+	
+			var filtersForPaginatedTable = {advancedFilter:true, 
+												quickFilter:true, 
+												ruleCount:0, 
+												isServerSide:true, 
+												onCommandLoad:temui.dojo.onCommandLoadHelper};
+					
+			var toolbarOptionsForPaginatedTable = {
+				refreshIcon:true,
+				actionMenu:true,
+				configTableIcon:true, configTableMenu: true,
+				exporterIcon: true, exporterMenu: true,
+				printerIcon:true, printerMenu: true											
+			};
+        </script>
+
+
+
+
+
+	 	<div dojoType="dijit.layout.TabContainer" style="width: 100%;"  doLayout="false">
+	        <div dojoType="dijit.layout.ContentPane" title="RelevanceResultsStore" selected="true">
+				<div id="storeDemo" style="display:none;">
+					<p>
+						This datastore encapsulates an optimal way for working with a simple set of Relevance results.  For UI and 
+						Relevance results that fit its criteria it can provide significant performance benefits in terms of data loading
+						times and UI responsiveness.  <b>For large data sets it's highly recommended to use this data store where possible.</b>
+						For detailed information refer to the API docs.
+						<br/><br/>
+						<b>Recommended for 8.2+ dashboards due to memory leak issues.</b>
+					</p>		
+					<div id="testPaginatedGrid" 
+						dojoType="dojoe.table.Table" 
+						jsID="testPaginatedTable"
+						gridParams="{
+							structure:paginatedLayout,
+							keepSelection:true,
+							plugins:{	nestedSorting: false,
+										filter: filtersForPaginatedTable, 
+										pagination: true, 
+										printer: true, 
+										exporter: true,
+										menus:menuForTableOne}	
+							}"
+						toolbarOptions="toolbarOptionsForPaginatedTable"
+						width="100%" height="360">		
+					</div>
+				</div>
+			</div>
+        	<div dojoType="dijit.layout.ContentPane" title="Data Table">
+				<div id="tableDemo" style="display:none;">
+					<p>
+						This example shows how to populate a TED Table widget with the results of a Relevance call.
+					</p>		
+					<div>
+						<div id="testGrid" 
+							dojoType="dojoe.table.Table" 
+							jsID="testTable"
+							gridParams="{
+								structure:layout,
+								plugins:{	indirectSelection : true,
+											nestedSorting: true,
+											filter: filtersForTableOne, 
+											pagination: true, 
+											printer: true, 
+											exporter: true,
+											menus:menuForTableOne},
+								sortFields: sortFieldsForTableOne		
+								}"
+							toolbarOptions="toolbarOptionsForTableOne"
+							width="100%" height="360px">		
+						</div>
+					</div>
+				</div>	
+			</div>
+        	<div dojoType="dijit.layout.ContentPane" title="Content Creation/Interaction">
+				<div id="apiDemo" style="display:none;">
+					<div>
+						<p>The ADF provides some simple methods for creating content via the Console.  Here's an example of how to create a simple action:</p>
+						<button dojoType="dijit.form.Button" type="button">
+		            		Create Action
+		            		<script type="dojo/method" event="onClick" args="evt">
+		               			createAction();
+		            		</script>
+		        		</button>
+						<br/><br />
+						<p>And here's an example of how to open a Computers document window.</p>
+						<button dojoType="dijit.form.Button" type="button">
+		            		Open Computers
+		            		<script type="dojo/method" event="onClick" args="evt">
+								openComputers();
+							</script>
+						</button>
+					</div>						
+				</div>	
+			</div>	
+		</div>	
+
+		<div id="miscDemo" style="display:none;">
+			<p>UI Support:<br/>
+				<button dojoType="dijit.form.Button" type="button">
+					Show Log Contents
+					<script type="dojo/method" event="onClick" args="evt">
+						temui.dojo.showLogContents();
+		            </script>
+		        </button> 
+				(Can also be triggered by ctrl-alt-shft-L when focus is on dashboard)
+				<br/>	
+		        <button dojoType="dijit.form.Button" type="button">
+		            Trigger Error
+		            <script type="dojo/method" event="onClick" args="evt">
+						tem.evalRel('namesa of bes fixlets');
+		            </script>
+		        </button>
+			</p>
+
+			<p>Context Information: 
+				<ul id="contextInfo"></ul>
+			</p>
+
+			<p>Localization example: 
+				<ul id="localizationExample"></ul>
+			</p>
+		</div>		
+				
+		]]>
+	   </HTML>
+	 </Page>
+   </Wizard>
+</BES>
