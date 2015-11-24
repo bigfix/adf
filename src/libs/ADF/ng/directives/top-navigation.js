@@ -79,6 +79,8 @@ define(['angular', 'text!./top-navigation.html', '../adf-ng-module'], function(a
             },
             link: function ($scope, element, attr) {
                 $scope.lastUpdate = new Date();
+                $scope.refreshTooltip = temui.l10n.refresh;
+                
                 $scope.refreshClicked = function(){
                     $scope.onRefresh();
                     $scope.lastUpdate = new Date();

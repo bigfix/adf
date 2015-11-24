@@ -2198,7 +2198,7 @@ temui.grid = {};
 				}).join(",");
 				csvContent += "\n" + rowContent;
 			}
-			temui.saveToFile(csvContent, defaultFilename);
+			temui.saveToFile_(csvContent, defaultFilename);
 		}
 		temui.hidePageLoading();
 	}
@@ -2715,7 +2715,7 @@ temui.grid = {};
 	 * @param {String} defaultFilename Default filename
 	 * @param {String} defaultFolder Default folder. If not provided, MyDocuments folder is used. (optional)
 	 */
-	temui.saveToFile = function(fileContent, defaultFilename, defaultFolder) {
+	temui.saveToFile_ = function(fileContent, defaultFilename, defaultFolder) {
 
 		// Using HTML5 local file download if possible
 		if ((typeof Blob == "function") && (window.URL && (typeof window.URL.createObjectURL == "function"))) 
