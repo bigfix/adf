@@ -67,6 +67,15 @@ var /** holds major version number for IE or NaN for real browsers */
     nodeName_,
     uid               = ['0', '0', '0'];
 
+/** 
+ * Fix for problem with Console. The Console will always send a header to the server indicating IE7.
+ * The override of the IE rendering engine version using the meta tag
+ * <meta http-equiv="X-UA-Compatible" content="IE=9">
+ * has no effect on the useragent header sent by the browser to the server, but does change the documentMode.
+ */
+if (! isNaN(msie)) {
+	msie = document.documentMode;
+}
 
 /**
  * @private
