@@ -64,13 +64,16 @@ define(['angular', 'jquery', 'text!./tab-set.html', '../adf-ng-module', 'adf-ui'
                 // been set to its real value at this time.
                 $timeout(function(){
                     // fix for IE7
-                    $(elem).find('a.temui-tab-heading').each(function(){
-                        if ($(this).attr('href').split('#').length > 1){
-                           $(this).attr('href', '#' + $(this).attr('href').split('#')[1]); 
-                        }
+                    elem.find('.tabanchor').each(function(){
+						try {
+	                        $(this).attr('href', '#' + $(this).attr('href').split('#')[1]);
+						} catch(e) {
+							// Catch the exception that happens on IE11.
+							var failtest = {};
+						}                    	
                     });
-                    $(elem).tabs();
-                    $(elem).bind('tabsshow', function(event, ui) {
+                    elem.tabs();
+                    elem.bind('tabsshow', function(event, ui) {
                         for (var i = 0; i < $scope.tabs.length; i++) {
                             if ('#' + $scope.tabs[i].id == $(ui.tab).attr('href')) {
                                 $scope.tabs[i].setActive(true);
@@ -83,7 +86,7 @@ define(['angular', 'jquery', 'text!./tab-set.html', '../adf-ng-module', 'adf-ui'
 
                 $scope.$watch('tabs.length', function(newValue, oldValue, scope) {
                     $timeout(function(){
-                        $(elem).tabs('refresh');
+                        elem.tabs('refresh');
                     });
                 });
             }
@@ -108,7 +111,7 @@ define(['angular', 'jquery', 'text!./tab-set.html', '../adf-ng-module', 'adf-ui'
     <div ng-controller="MainController">
         Tab 1 is selected: {{tab1Active}}
         <div adf-tab-set>
-            <div adf-tab heading="Tab 1" active="$parent.tab1Active">
+            <div adf-tab heading="Tab 1" active="tab1Active">
                 Tab 1 content
             </div>
             <div adf-tab heading="Tab 2" select="tab2Selected()">
@@ -138,16 +141,13 @@ define(['angular', 'jquery', 'text!./tab-set.html', '../adf-ng-module', 'adf-ui'
             replace: true,
             template: '<div ng-transclude />',
             link: function ($scope, elem, attrs, tabSetContainer) {
+
                 $scope.setActive = function(active){
-                    if (attrs.active){
-                        $scope.$apply(function(){
-                            $scope.active = active;
-                        });
-                    }
+                    if (attrs.active)
+                        $scope.active = active;
                     if (active){
                         $scope.onSelect();
                         $scope.$$nextSibling.$broadcast('adfTabSelected', $scope.id);
-                        $(window).trigger('resize');
                     }
                 };
 
